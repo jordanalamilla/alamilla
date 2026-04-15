@@ -1,5 +1,11 @@
 <?php
 /**
+ * Functions for the Alamilla theme.
+ *
+ * @package Alamilla
+ */
+
+/**
  * Alamilla child theme functions and definitions
  */
 function alamilla_child_enqueue_styles() {

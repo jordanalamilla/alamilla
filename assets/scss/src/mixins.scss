@@ -1,0 +1,11 @@
+/**
+ * Mixins
+ * 
+ * Reusable styles chunks.
+ * 
+ * @package Alamilla
+ */
+
+@mixin transition {
+    transition: 0.5s ease all;
+}

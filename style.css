@@ -4,5 +4,118 @@ Description: The portfolio website for Jordan Michael Alamilla.
 Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
+/**
+ * Root CSS Variables
+ * 
+ * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
+ * 
+ * @package Alamilla
+ */
+:root {
+  --heading-h2-font-family: var(--wp--preset--font-family--primary);
+  --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+  --heading-h2-font-weight: bold;
+  --heading-h2-letter-spacing: 0;
+  --heading-h2-text-transform: normal;
+}
+
+/**
+ * Mixins
+ * 
+ * Reusable styles chunks.
+ * 
+ * @package Alamilla
+ */
+/**
+ * Typography Mixins
+ * 
+ * SCSS mixins for typography styles used throughout the Alamilla theme.
+ * These mixins utilize theme.json CSS variables for easy customization and consistency.
+ * 
+ * @package Alamilla
+ */
+/**
+* Global Styles
+* 
+* Styles for miscellaneous global elements.
+*
+* @package Alamilla
+*/
+main.wp-block-group {
+  padding: 0;
+}
+
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * @package Alamilla
+ */
+body {
+  transition: 0.5s ease all;
+}
+
+.theme-base {
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+}
+
+.theme-contrast {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--contrast);
+}
+
+.theme-accent-1 {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--accent-1);
+}
+
+.theme-accent-2 {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--accent-2);
+}
+
+.theme-accent-3 {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--accent-3);
+}
+
+.theme-accent-4 {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--accent-4);
+}
+
+.theme-accent-5 {
+  color: var(--wp--preset--color--accent-4);
+  background-color: var(--wp--preset--color--accent-5);
+}
+
+.theme-accent-6 {
+  color: var(--wp--preset--color--base);
+  background-color: var(--wp--preset--color--accent-6);
+}
+
+/**
+ * Pattern: Title Content Accordion (TCA)
+ * 
+ * Styles for the TCA pattern.
+ * 
+ * @package Alamilla
+ */
+@media (max-width: 1024px) {
+  .pattern-title-content-acccordion .wp-block-columns {
+    flex-wrap: wrap !important;
+  }
+  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(1) {
+    flex-basis: 100% !important;
+  }
+  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(2),
+  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(3) {
+    flex-basis: auto !important;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

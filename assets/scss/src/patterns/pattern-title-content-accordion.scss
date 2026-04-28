@@ -1,0 +1,24 @@
+/**
+ * Pattern: Title Content Accordion (TCA)
+ * 
+ * Styles for the TCA pattern.
+ * 
+ * @package Alamilla
+ */
+
+.pattern-title-content-acccordion {
+    @media (max-width: 1024px) {
+        .wp-block-columns {
+            flex-wrap: wrap !important;
+
+            .wp-block-column:nth-child(1) {
+                flex-basis: 100% !important;
+            }
+
+            .wp-block-column:nth-child(2),
+            .wp-block-column:nth-child(3) {
+                flex-basis: auto !important;
+            }
+        }
+    }
+}

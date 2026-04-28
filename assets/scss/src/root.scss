@@ -1,0 +1,15 @@
+/**
+ * Root CSS Variables
+ * 
+ * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
+ * 
+ * @package Alamilla
+ */
+
+:root {
+    --heading-h2-font-family: var(--wp--preset--font-family--primary);
+    --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+    --heading-h2-font-weight: bold;
+    --heading-h2-letter-spacing: 0;
+    --heading-h2-text-transform: normal;
+}

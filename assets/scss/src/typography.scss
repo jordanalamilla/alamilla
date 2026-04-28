@@ -1,0 +1,15 @@
+/**
+ * Typography Mixins
+ * 
+ * SCSS mixins for typography styles used throughout the Alamilla theme.
+ * These mixins utilize theme.json CSS variables for easy customization and consistency.
+ * 
+ * @package Alamilla
+ */
+
+@mixin heading-h2 {
+    font-family: var(--heading-h2-font-family);
+    font-size: var(--heading-h2-font-size);
+    font-weight: var(--heading-h2-font-weight);
+    letter-spacing: var(--heading-h2-letter-spacing);
+}

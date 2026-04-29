@@ -1,12 +1,12 @@
 /**
  * Theme Observer
  * 
- * Functionality to detect when elements with theme trigger classes are in view and change the theme accordingly.
+ * Functionality to change the site theme when a trigger element is in view.
  */
 export default function themeObserver() {
 
     // Store the previous theme class.
-    const prevColor = false;
+    let prevColor = false;
 
     // List of theme color names based on theme.json.
     const wpThemeColors = [
@@ -41,6 +41,7 @@ export default function themeObserver() {
 
                         // If there is no theme to switch to, remove the current theme.
                         document.body.classList.remove("theme-" + themeColor);
+                        prevColor = false;
                     }
                 });
             },

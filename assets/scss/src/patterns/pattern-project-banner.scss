@@ -1,0 +1,27 @@
+/**
+ * Project Banner
+ *
+ * Styles for the custom Project Banner pattern.
+ * 
+ * @package Alamilla
+ */
+
+.pattern-project-banner {
+    position: relative;
+
+    // Image.
+    .wp-block-post-featured-image {
+
+        // Overlay.
+        .wp-block-post-featured-image__overlay {
+            // opacity: .3;
+        }
+    }
+
+    // Text content.
+    .wp-block-columns {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}

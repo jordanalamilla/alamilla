@@ -1,0 +1,26 @@
+/**
+ * WP Tags Block
+ * 
+ * Override styles for the Gutenberg tags block.
+ * 
+ * @package Alamilla
+ */
+
+@use "../mixins";
+
+.taxonomy-post_tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 2px;
+
+    a {
+        @include mixins.badge;
+        @include mixins.transition;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            opacity: 0.7;
+        }
+    }
+}

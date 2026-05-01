@@ -5,8 +5,6 @@ Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
 
-@use "src/root";
-@use "src/mixins";
 @use "src/typography";
 @use "src/global";
 @use "src/themes";
@@ -15,5 +13,5 @@ Author URI: https://alamilla.com
 @use "src/blocks/wp-tags";
 
 // Patterns.
-@use "src/patterns/pattern-title-content-accordion";
 @use "src/patterns/pattern-project-banner";
+@use "src/patterns/pattern-title-content-accordion";

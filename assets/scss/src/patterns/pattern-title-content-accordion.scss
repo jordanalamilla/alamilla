@@ -5,9 +5,11 @@
  * 
  * @package Alamilla
  */
+@use "../vars";
 
-.pattern-title-content-acccordion {
-    @media (max-width: 1024px) {
+// Layout change for small desktop
+@media (min-width: vars.$desktop-min) and (max-width: vars.$desktop-max) {
+    .pattern-title-content-accordion {
         .wp-block-columns {
             flex-wrap: wrap !important;
 
@@ -17,7 +19,20 @@
 
             .wp-block-column:nth-child(2),
             .wp-block-column:nth-child(3) {
-                flex-basis: auto !important;
+                flex-basis: calc(50% - (var(--wp--preset--spacing--50) / 2)) !important;
+            }
+        }
+    }
+}
+
+// Layout change for small desktop
+@media (max-width: vars.$tablet-max) {
+    .pattern-title-content-accordion {
+        .wp-block-columns {
+            flex-wrap: wrap !important;
+
+            .wp-block-column {
+                flex-basis: 100% !important;
             }
         }
     }

@@ -5,28 +5,6 @@ Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
 /**
- * Root CSS Variables
- * 
- * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
- * 
- * @package Alamilla
- */
-:root {
-  --heading-h2-font-family: var(--wp--preset--font-family--primary);
-  --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
-  --heading-h2-font-weight: bold;
-  --heading-h2-letter-spacing: 0;
-  --heading-h2-text-transform: normal;
-}
-
-/**
- * Mixins
- * 
- * Reusable styles chunks.
- * 
- * @package Alamilla
- */
-/**
  * Typography Mixins
  * 
  * SCSS mixins for typography styles used throughout the Alamilla theme.
@@ -52,6 +30,13 @@ main.wp-block-group {
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
  *
+ * @package Alamilla
+ */
+/**
+ * Mixins
+ * 
+ * Reusable styles chunks.
+ * 
  * @package Alamilla
  */
 body {
@@ -99,6 +84,15 @@ body {
 }
 
 /**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * @package Alamilla
+ */
+/**
  * WP Tags Block
  * 
  * Override styles for the Gutenberg tags block.
@@ -125,26 +119,6 @@ body {
 }
 
 /**
- * Pattern: Title Content Accordion (TCA)
- * 
- * Styles for the TCA pattern.
- * 
- * @package Alamilla
- */
-@media (max-width: 1024px) {
-  .pattern-title-content-acccordion .wp-block-columns {
-    flex-wrap: wrap !important;
-  }
-  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(1) {
-    flex-basis: 100% !important;
-  }
-  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(2),
-  .pattern-title-content-acccordion .wp-block-columns .wp-block-column:nth-child(3) {
-    flex-basis: auto !important;
-  }
-}
-
-/**
  * Project Banner
  *
  * Styles for the custom Project Banner pattern.
@@ -158,6 +132,49 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+/**
+ * Pattern: Title Content Accordion (TCA)
+ * 
+ * Styles for the TCA pattern.
+ * 
+ * @package Alamilla
+ */
+/**
+ * Root CSS Variables
+ * 
+ * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
+ * 
+ * @package Alamilla
+ */
+:root {
+  --heading-h2-font-family: var(--wp--preset--font-family--primary);
+  --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+  --heading-h2-font-weight: bold;
+  --heading-h2-letter-spacing: 0;
+  --heading-h2-text-transform: normal;
+}
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .pattern-title-content-accordion .wp-block-columns {
+    flex-wrap: wrap !important;
+  }
+  .pattern-title-content-accordion .wp-block-columns .wp-block-column:nth-child(1) {
+    flex-basis: 100% !important;
+  }
+  .pattern-title-content-accordion .wp-block-columns .wp-block-column:nth-child(2),
+  .pattern-title-content-accordion .wp-block-columns .wp-block-column:nth-child(3) {
+    flex-basis: calc(50% - var(--wp--preset--spacing--50) / 2) !important;
+  }
+}
+@media (max-width: 1023px) {
+  .pattern-title-content-accordion .wp-block-columns {
+    flex-wrap: wrap !important;
+  }
+  .pattern-title-content-accordion .wp-block-columns .wp-block-column {
+    flex-basis: 100% !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,3 +13,10 @@
     --heading-h2-letter-spacing: 0;
     --heading-h2-text-transform: normal;
 }
+
+// Breakpoints
+$desktop-max: 1600px;
+$desktop-min: 1024px;
+$tablet-max: 1023px;
+$tablet-min: 782px;
+$mobile-max: 781px;

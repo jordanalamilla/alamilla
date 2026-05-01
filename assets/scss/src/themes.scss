@@ -11,7 +11,7 @@
 @use "mixins";
 
 body {
-    @include mixins.transition;
+    transition: 0.5s ease background-color, 0.5s ease color;
 }
 
 .theme-base {
@@ -52,4 +52,30 @@ body {
 .theme-accent-6 {
     color: var(--wp--preset--color--base);
     background-color: var(--wp--preset--color--accent-6);
+}
+
+// Button theme changes
+.theme-contrast,
+.theme-accent-1,
+.theme-accent-3 {
+
+    // Pill button
+    .wp-block-button:not(.is-style-outline) a {
+        color: var(--wp--preset--color--contrast);
+        background-color: var(--wp--preset--color--base);
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+        }
+    }
+
+    // Outline button
+    .wp-block-button.is-style-outline a {
+
+        &:hover,
+        &:focus {
+            background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+        }
+    }
 }

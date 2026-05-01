@@ -46,7 +46,7 @@ Author URI: https://alamilla.com
  * @package Alamilla
  */
 body {
-  transition: 0.5s ease all;
+  transition: 0.5s ease background-color, 0.5s ease color;
 }
 
 .theme-base {
@@ -87,6 +87,27 @@ body {
 .theme-accent-6 {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-6);
+}
+
+.theme-contrast .wp-block-button:not(.is-style-outline) a,
+.theme-accent-1 .wp-block-button:not(.is-style-outline) a,
+.theme-accent-3 .wp-block-button:not(.is-style-outline) a {
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+}
+.theme-contrast .wp-block-button:not(.is-style-outline) a:hover, .theme-contrast .wp-block-button:not(.is-style-outline) a:focus,
+.theme-accent-1 .wp-block-button:not(.is-style-outline) a:hover,
+.theme-accent-1 .wp-block-button:not(.is-style-outline) a:focus,
+.theme-accent-3 .wp-block-button:not(.is-style-outline) a:hover,
+.theme-accent-3 .wp-block-button:not(.is-style-outline) a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+}
+.theme-contrast .wp-block-button.is-style-outline a:hover, .theme-contrast .wp-block-button.is-style-outline a:focus,
+.theme-accent-1 .wp-block-button.is-style-outline a:hover,
+.theme-accent-1 .wp-block-button.is-style-outline a:focus,
+.theme-accent-3 .wp-block-button.is-style-outline a:hover,
+.theme-accent-3 .wp-block-button.is-style-outline a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
 }
 
 /**

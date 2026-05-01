@@ -32,6 +32,12 @@ main.wp-block-group {
  *
  * @package Alamilla
  */
+/*
+Theme Name: Alamilla
+Description: The portfolio website for Jordan Michael Alamilla.
+Author: Jordan Michael Alamilla
+Author URI: https://alamilla.com
+*/
 /**
  * Mixins
  * 
@@ -105,9 +111,15 @@ body {
   gap: 10px 2px;
 }
 .taxonomy-post_tag a {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
+  font-size: var(--wp--preset--font-size--x-small);
   display: inline-block;
   padding: 5px 14px;
-  line-height: 1;
+  line-height: 1.2;
   border-radius: 9999px;
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--accent-4);
@@ -116,6 +128,27 @@ body {
 }
 .taxonomy-post_tag a:hover, .taxonomy-post_tag a:focus {
   opacity: 0.7;
+}
+
+/*
+Theme Name: Alamilla
+Description: The portfolio website for Jordan Michael Alamilla.
+Author: Jordan Michael Alamilla
+Author URI: https://alamilla.com
+*/
+/**
+ * WP Button Block
+ * 
+ * Override styles for the Gutenberg button block.
+ * 
+ * @package Alamilla
+ */
+.wp-block-button a.wp-block-button__link {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
 }
 
 /**
@@ -149,11 +182,18 @@ body {
  * @package Alamilla
  */
 :root {
-  --heading-h2-font-family: var(--wp--preset--font-family--primary);
-  --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
-  --heading-h2-font-weight: bold;
-  --heading-h2-letter-spacing: 0;
-  --heading-h2-text-transform: normal;
+  --font-family--primary: var(--wp--preset--font-family--switzer-variable);
+  --font-family--secondary: var(--wp--preset--font-family--fira-code);
+  --heading-h2--font-family: var(--font-family--primary);
+  --heading-h2--font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+  --heading-h2--font-weight: bold;
+  --heading-h2--letter-spacing: 0;
+  --heading-h2--text-transform: normal;
+  --heading-h5--font-family: var(--font-family--secondary);
+  --heading-h5--font-size: var(--wp--preset--font-size--small);
+  --heading-h5--font-weight: 400;
+  --heading-h5--letter-spacing: 0;
+  --heading-h5--text-transform: uppercase;
 }
 
 @media (min-width: 1024px) and (max-width: 1600px) {

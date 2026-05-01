@@ -8,8 +8,16 @@
  */
 
 @mixin heading-h2 {
-    font-family: var(--heading-h2-font-family);
-    font-size: var(--heading-h2-font-size);
-    font-weight: var(--heading-h2-font-weight);
-    letter-spacing: var(--heading-h2-letter-spacing);
+    font-family: var(--heading-h2--font-family);
+    font-size: var(--heading-h2--font-size);
+    font-weight: var(--heading-h2--font-weight);
+    letter-spacing: var(--heading-h2--letter-spacing);
+}
+
+@mixin heading-h5 {
+    font-family: var(--heading-h5--font-family);
+    font-size: var(--heading-h5--font-size);
+    font-weight: var(--heading-h5--font-weight);
+    letter-spacing: var(--heading-h5--letter-spacing);
+    text-transform: var(--heading-h5--text-transform);
 }

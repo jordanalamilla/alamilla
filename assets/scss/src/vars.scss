@@ -7,11 +7,20 @@
  */
 
 :root {
-    --heading-h2-font-family: var(--wp--preset--font-family--primary);
-    --heading-h2-font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
-    --heading-h2-font-weight: bold;
-    --heading-h2-letter-spacing: 0;
-    --heading-h2-text-transform: normal;
+    --font-family--primary: var(--wp--preset--font-family--switzer-variable);
+    --font-family--secondary: var(--wp--preset--font-family--fira-code);
+
+    --heading-h2--font-family: var(--font-family--primary);
+    --heading-h2--font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+    --heading-h2--font-weight: bold;
+    --heading-h2--letter-spacing: 0;
+    --heading-h2--text-transform: normal;
+
+    --heading-h5--font-family: var(--font-family--secondary);
+    --heading-h5--font-size: var(--wp--preset--font-size--small);
+    --heading-h5--font-weight: 400;
+    --heading-h5--letter-spacing: 0;
+    --heading-h5--text-transform: uppercase;
 }
 
 // Breakpoints

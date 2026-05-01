@@ -1,0 +1,15 @@
+/**
+ * WP Button Block
+ * 
+ * Override styles for the Gutenberg button block.
+ * 
+ * @package Alamilla
+ */
+
+@use "../typography";
+
+.wp-block-button {
+    a.wp-block-button__link {
+        @include typography.heading-h5;
+    }
+}

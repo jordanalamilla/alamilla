@@ -5,15 +5,18 @@
  * 
  * @package Alamilla
  */
+@use "./typography";
 
 @mixin transition {
     transition: 0.5s ease all;
 }
 
 @mixin badge {
+    @include typography.heading-h5;
+    font-size: var(--wp--preset--font-size--x-small);
     display: inline-block;
     padding: 5px 14px;
-    line-height: 1;
+    line-height: 1.2;
     border-radius: 9999px;
     color: var(--wp--preset--color--contrast);
     background-color: var(--wp--preset--color--accent-4);

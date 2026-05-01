@@ -9,9 +9,10 @@ Author URI: https://alamilla.com
 @use "src/global";
 @use "src/themes";
 
-// Blocks.
+// Blocks
 @use "src/blocks/wp-tags";
+@use "src/blocks/wp-button";
 
-// Patterns.
+// Patterns
 @use "src/patterns/pattern-project-banner";
 @use "src/patterns/pattern-title-content-accordion";

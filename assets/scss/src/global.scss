@@ -5,6 +5,16 @@
 *
 * @package Alamilla
 */
+
+// Hide the WP admin bar
+html {
+    margin-top: 0 !important;
+}
+
+#wpadminbar {
+    display: none !important;
+}
+
 main.wp-block-group {
     padding: 0;
 }

@@ -6,6 +6,11 @@
  * @package Alamilla
  */
 
+// Remove the space above the first block pattern when it's a template part.
+header+.wp-block-template-part {
+    margin-top: 0;
+}
+
 .pattern-project-banner {
     position: relative;
 

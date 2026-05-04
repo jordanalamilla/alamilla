@@ -1,0 +1,31 @@
+@use "../mixins.scss";
+@use "../typography.scss";
+
+// Hide the header when not scrolled
+body.scrolled header {
+    transform: translateY(-100%);
+}
+
+header {
+    @include mixins.transition;
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--base);
+
+    // Sticky header
+    &:has(>.is-position-sticky) {
+        position: fixed;
+        top: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
+        z-index: 10;
+        width: 100%;
+    }
+
+    // Site title
+    .wp-block-site-title {
+        @include typography.heading-h5;
+    }
+
+    // Menu items
+    .wp-block-pages-list__item__link {
+        @include typography.heading-h5;
+    }
+}

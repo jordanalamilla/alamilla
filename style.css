@@ -19,6 +19,14 @@ Author URI: https://alamilla.com
 *
 * @package Alamilla
 */
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none !important;
+}
+
 main.wp-block-group {
   padding: 0;
 }
@@ -49,44 +57,100 @@ body {
   transition: 0.5s ease background-color, 0.5s ease color;
 }
 
-.theme-base {
+.theme-base,
+.theme-base header {
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--base);
 }
+.theme-base .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--contrast) !important;
+}
+.theme-base .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--base) !important;
+}
 
-.theme-contrast {
+.theme-contrast,
+.theme-contrast header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--contrast);
 }
+.theme-contrast .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-contrast .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--contrast) !important;
+}
 
-.theme-accent-1 {
+.theme-accent-1,
+.theme-accent-1 header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-1);
 }
+.theme-accent-1 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-accent-1 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-1) !important;
+}
 
-.theme-accent-2 {
+.theme-accent-2,
+.theme-accent-2 header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-2);
 }
+.theme-accent-2 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-accent-2 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-2) !important;
+}
 
-.theme-accent-3 {
+.theme-accent-3,
+.theme-accent-3 header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-3);
 }
+.theme-accent-3 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-accent-3 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-3) !important;
+}
 
-.theme-accent-4 {
+.theme-accent-4,
+.theme-accent-4 header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-4);
 }
+.theme-accent-4 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-accent-4 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-4) !important;
+}
 
-.theme-accent-5 {
+.theme-accent-5,
+.theme-accent-5 header {
   color: var(--wp--preset--color--accent-4);
   background-color: var(--wp--preset--color--accent-5);
 }
+.theme-accent-5 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--accent-4) !important;
+}
+.theme-accent-5 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-5) !important;
+}
 
-.theme-accent-6 {
+.theme-accent-6,
+.theme-accent-6 header {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-6);
+}
+.theme-accent-6 .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+  color: var(--wp--preset--color--base) !important;
+}
+.theme-accent-6 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background-color: var(--wp--preset--color--accent-6) !important;
 }
 
 .theme-contrast .wp-block-button:not(.is-style-outline) a,
@@ -108,6 +172,51 @@ body {
 .theme-accent-3 .wp-block-button.is-style-outline a:hover,
 .theme-accent-3 .wp-block-button.is-style-outline a:focus {
   background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+}
+
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * @package Alamilla
+ */
+/*
+Theme Name: Alamilla
+Description: The portfolio website for Jordan Michael Alamilla.
+Author: Jordan Michael Alamilla
+Author URI: https://alamilla.com
+*/
+body.scrolled header {
+  transform: translateY(-100%);
+}
+
+header {
+  transition: 0.5s ease all;
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+}
+header:has(> .is-position-sticky) {
+  position: fixed;
+  top: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
+  z-index: 10;
+  width: 100%;
+}
+header .wp-block-site-title {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
+}
+header .wp-block-pages-list__item__link {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
 }
 
 /**
@@ -179,6 +288,10 @@ Author URI: https://alamilla.com
  * 
  * @package Alamilla
  */
+header + .wp-block-template-part {
+  margin-top: 0;
+}
+
 .pattern-project-banner {
   position: relative;
 }
@@ -211,7 +324,7 @@ Author URI: https://alamilla.com
   --heading-h2--letter-spacing: 0;
   --heading-h2--text-transform: normal;
   --heading-h5--font-family: var(--font-family--secondary);
-  --heading-h5--font-size: var(--wp--preset--font-size--small);
+  --heading-h5--font-size: var(--wp--preset--font-size--x-small);
   --heading-h5--font-weight: 400;
   --heading-h5--letter-spacing: 0;
   --heading-h5--text-transform: uppercase;

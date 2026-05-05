@@ -16,8 +16,6 @@ Author URI: https://alamilla.com
 * Global Styles
 * 
 * Styles for miscellaneous global elements.
-*
-* @package Alamilla
 */
 html {
   margin-top: 0 !important;
@@ -31,14 +29,19 @@ main.wp-block-group {
   padding: 0;
 }
 
+body.scrolled header {
+  transform: translateY(-100%);
+}
+body.scrolled footer {
+  transform: translateY(100%);
+}
+
 /**
  * Themes
  * 
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
- *
- * @package Alamilla
  */
 /*
 Theme Name: Alamilla
@@ -58,7 +61,8 @@ body {
 }
 
 .theme-base,
-.theme-base header {
+.theme-base header,
+.theme-base footer {
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--base);
 }
@@ -70,7 +74,8 @@ body {
 }
 
 .theme-contrast,
-.theme-contrast header {
+.theme-contrast header,
+.theme-contrast footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--contrast);
 }
@@ -180,8 +185,6 @@ body {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
- *
- * @package Alamilla
  */
 /*
 Theme Name: Alamilla
@@ -189,10 +192,9 @@ Description: The portfolio website for Jordan Michael Alamilla.
 Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
-body.scrolled header {
-  transform: translateY(-100%);
-}
-
+/**
+* Header Styles
+*/
 header {
   transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
@@ -225,8 +227,26 @@ header .wp-block-pages-list__item__link {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
- *
- * @package Alamilla
+ */
+/**
+* Footer Styles
+*/
+footer {
+  transition: 0.5s ease all;
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+  position: fixed;
+  bottom: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
+  z-index: 10;
+  width: 100%;
+}
+
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
  */
 /**
  * WP Tags Block

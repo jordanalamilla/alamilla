@@ -2,8 +2,6 @@
 * Global Styles
 * 
 * Styles for miscellaneous global elements.
-*
-* @package Alamilla
 */
 
 // Hide the WP admin bar
@@ -17,4 +15,15 @@ html {
 
 main.wp-block-group {
     padding: 0;
+}
+
+// Scroll to show / hide the header and footer
+body.scrolled {
+    header {
+        transform: translateY(-100%);
+    }
+
+    footer {
+        transform: translateY(100%);
+    }
 }

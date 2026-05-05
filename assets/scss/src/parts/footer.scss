@@ -1,0 +1,16 @@
+/**
+* Footer Styles
+*/
+
+@use "../mixins.scss";
+
+// Hide the header when not scrolled
+footer {
+    @include mixins.transition;
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--base);
+    position: fixed;
+    bottom: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
+    z-index: 10;
+    width: 100%;
+}

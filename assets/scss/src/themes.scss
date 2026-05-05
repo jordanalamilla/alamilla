@@ -4,8 +4,6 @@
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
- *
- * @package Alamilla
  */
 
 @use "mixins";
@@ -17,7 +15,8 @@ body {
 .theme-base {
 
     &,
-    header {
+    header,
+    footer {
         color: var(--wp--preset--color--contrast);
         background-color: var(--wp--preset--color--base);
     }
@@ -35,7 +34,8 @@ body {
 .theme-contrast {
 
     &,
-    header {
+    header,
+    footer {
         color: var(--wp--preset--color--base);
         background-color: var(--wp--preset--color--contrast);
     }

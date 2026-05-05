@@ -1,0 +1,16 @@
+/**
+ * WP Social Links Block
+ *
+ * Override styles for the Gutenberg tags block.
+ */
+
+@use "../mixins.scss";
+
+.wp-block-social-links {
+    gap: 1.2rem;
+
+    .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+        @include mixins.transition;
+        color: var(--wp--preset--color--contrast);
+    }
+}

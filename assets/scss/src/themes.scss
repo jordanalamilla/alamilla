@@ -4,182 +4,102 @@
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
  */
 
+@use "sass:map";
 @use "mixins";
 
 body {
     transition: 0.5s ease background-color, 0.5s ease color;
 }
 
-.theme-base {
+// Theme configuration map - hookup theme names with colours
+$themes: (
+    'base': ('text': --wp--preset--color--contrast,
+        'bg': --wp--preset--color--base),
+    'contrast': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--contrast),
+    'accent-1': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--accent-1),
+    'accent-2': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--accent-2),
+    'accent-3': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--accent-3),
+    'accent-4': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--accent-4),
+    'accent-5': ('text': --wp--preset--color--accent-4,
+        'bg': --wp--preset--color--accent-5),
+    'accent-6': ('text': --wp--preset--color--base,
+        'bg': --wp--preset--color--accent-6)
+);
 
+// Coloring styles to repeat for each theme
+@mixin theme-base($text-var, $bg-var) {
+
+    // Header and footer
     &,
     header,
     footer {
-        color: var(--wp--preset--color--contrast);
-        background-color: var(--wp--preset--color--base);
+        color: var(#{$text-var});
+        background-color: var(#{$bg-var});
     }
 
     // Mobile menu
     .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--contrast) !important;
+        color: var(#{$text-var}) !important;
     }
 
     .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--base) !important;
+        background-color: var(#{$bg-var}) !important;
+    }
+
+    // Footer social icons
+    .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+        color: var(#{$text-var});
     }
 }
 
-.theme-contrast {
-
-    &,
-    header,
-    footer {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--contrast);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--contrast) !important;
+// Hook up theme class names with repeated code mixin to generate all theme color change styles
+@each $name, $config in $themes {
+    .theme-#{$name} {
+        @include theme-base(map.get($config, 'text'), map.get($config, 'bg'));
     }
 }
 
-.theme-accent-1 {
+// Button theme changes - only for specific themes
+$button-themes: (
+    'contrast',
+    'accent-1',
+    'accent-3'
+);
 
-    &,
-    header {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--accent-1);
-    }
+@each $name in $button-themes {
+    .theme-#{$name} {
 
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
+        // Pill button
+        .wp-block-button:not(.is-style-outline) a {
+            color: var(--wp--preset--color--contrast);
+            background-color: var(--wp--preset--color--base);
 
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-1) !important;
-    }
-}
-
-.theme-accent-2 {
-
-    &,
-    header {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--accent-2);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-2) !important;
-    }
-}
-
-.theme-accent-3 {
-
-    &,
-    header {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--accent-3);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-3) !important;
-    }
-}
-
-.theme-accent-4 {
-
-    &,
-    header {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--accent-4);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-4) !important;
-    }
-}
-
-.theme-accent-5 {
-
-    &,
-    header {
-        color: var(--wp--preset--color--accent-4);
-        background-color: var(--wp--preset--color--accent-5);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--accent-4) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-5) !important;
-    }
-}
-
-.theme-accent-6 {
-
-    &,
-    header {
-        color: var(--wp--preset--color--base);
-        background-color: var(--wp--preset--color--accent-6);
-    }
-
-    // Mobile menu
-    .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
-        color: var(--wp--preset--color--base) !important;
-    }
-
-    .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-        background-color: var(--wp--preset--color--accent-6) !important;
-    }
-}
-
-// Button theme changes
-.theme-contrast,
-.theme-accent-1,
-.theme-accent-3 {
-
-    // Pill button
-    .wp-block-button:not(.is-style-outline) a {
-        color: var(--wp--preset--color--contrast);
-        background-color: var(--wp--preset--color--base);
-
-        &:hover,
-        &:focus {
-            background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+            &:hover,
+            &:focus {
+                background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+            }
         }
-    }
 
-    // Outline button
-    .wp-block-button.is-style-outline a {
+        // Outline button
+        .wp-block-button.is-style-outline a {
 
-        &:hover,
-        &:focus {
-            background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+            &:hover,
+            &:focus {
+                background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+            }
         }
     }
 }

@@ -1,8 +1,9 @@
 /**
-* Footer Styles
-*/
+ * Footer Styles
+ */
 
 @use "../mixins.scss";
+@use "../vars.scss";
 
 // Hide the header when not scrolled
 footer {
@@ -13,4 +14,16 @@ footer {
     bottom: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
     z-index: 10;
     width: 100%;
+
+    @media (max-width: vars.$mobile-max) {
+        text-align: center;
+
+        .wp-block-columns {
+            gap: var(--wp--preset--spacing--40);
+        }
+
+        .wp-block-social-links {
+            justify-content: center;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Alamilla
 Description: The portfolio website for Jordan Michael Alamilla.
@@ -42,6 +43,12 @@ body.scrolled footer {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
  */
 /*
 Theme Name: Alamilla
@@ -72,6 +79,9 @@ body {
 .theme-base .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--base) !important;
 }
+.theme-base .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--contrast);
+}
 
 .theme-contrast,
 .theme-contrast header,
@@ -85,9 +95,13 @@ body {
 .theme-contrast .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--contrast) !important;
 }
+.theme-contrast .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
 .theme-accent-1,
-.theme-accent-1 header {
+.theme-accent-1 header,
+.theme-accent-1 footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-1);
 }
@@ -97,9 +111,13 @@ body {
 .theme-accent-1 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-1) !important;
 }
+.theme-accent-1 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
 .theme-accent-2,
-.theme-accent-2 header {
+.theme-accent-2 header,
+.theme-accent-2 footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-2);
 }
@@ -109,9 +127,13 @@ body {
 .theme-accent-2 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-2) !important;
 }
+.theme-accent-2 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
 .theme-accent-3,
-.theme-accent-3 header {
+.theme-accent-3 header,
+.theme-accent-3 footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-3);
 }
@@ -121,9 +143,13 @@ body {
 .theme-accent-3 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-3) !important;
 }
+.theme-accent-3 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
 .theme-accent-4,
-.theme-accent-4 header {
+.theme-accent-4 header,
+.theme-accent-4 footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-4);
 }
@@ -133,9 +159,13 @@ body {
 .theme-accent-4 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-4) !important;
 }
+.theme-accent-4 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
 .theme-accent-5,
-.theme-accent-5 header {
+.theme-accent-5 header,
+.theme-accent-5 footer {
   color: var(--wp--preset--color--accent-4);
   background-color: var(--wp--preset--color--accent-5);
 }
@@ -145,9 +175,13 @@ body {
 .theme-accent-5 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-5) !important;
 }
+.theme-accent-5 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--accent-4);
+}
 
 .theme-accent-6,
-.theme-accent-6 header {
+.theme-accent-6 header,
+.theme-accent-6 footer {
   color: var(--wp--preset--color--base);
   background-color: var(--wp--preset--color--accent-6);
 }
@@ -157,25 +191,40 @@ body {
 .theme-accent-6 .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: var(--wp--preset--color--accent-6) !important;
 }
+.theme-accent-6 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  color: var(--wp--preset--color--base);
+}
 
-.theme-contrast .wp-block-button:not(.is-style-outline) a,
-.theme-accent-1 .wp-block-button:not(.is-style-outline) a,
+.theme-contrast .wp-block-button:not(.is-style-outline) a {
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+}
+.theme-contrast .wp-block-button:not(.is-style-outline) a:hover, .theme-contrast .wp-block-button:not(.is-style-outline) a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+}
+.theme-contrast .wp-block-button.is-style-outline a:hover, .theme-contrast .wp-block-button.is-style-outline a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+}
+
+.theme-accent-1 .wp-block-button:not(.is-style-outline) a {
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--base);
+}
+.theme-accent-1 .wp-block-button:not(.is-style-outline) a:hover, .theme-accent-1 .wp-block-button:not(.is-style-outline) a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
+}
+.theme-accent-1 .wp-block-button.is-style-outline a:hover, .theme-accent-1 .wp-block-button.is-style-outline a:focus {
+  background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
+}
+
 .theme-accent-3 .wp-block-button:not(.is-style-outline) a {
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--base);
 }
-.theme-contrast .wp-block-button:not(.is-style-outline) a:hover, .theme-contrast .wp-block-button:not(.is-style-outline) a:focus,
-.theme-accent-1 .wp-block-button:not(.is-style-outline) a:hover,
-.theme-accent-1 .wp-block-button:not(.is-style-outline) a:focus,
-.theme-accent-3 .wp-block-button:not(.is-style-outline) a:hover,
-.theme-accent-3 .wp-block-button:not(.is-style-outline) a:focus {
+.theme-accent-3 .wp-block-button:not(.is-style-outline) a:hover, .theme-accent-3 .wp-block-button:not(.is-style-outline) a:focus {
   background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
 }
-.theme-contrast .wp-block-button.is-style-outline a:hover, .theme-contrast .wp-block-button.is-style-outline a:focus,
-.theme-accent-1 .wp-block-button.is-style-outline a:hover,
-.theme-accent-1 .wp-block-button.is-style-outline a:focus,
-.theme-accent-3 .wp-block-button.is-style-outline a:hover,
-.theme-accent-3 .wp-block-button.is-style-outline a:focus {
+.theme-accent-3 .wp-block-button.is-style-outline a:hover, .theme-accent-3 .wp-block-button.is-style-outline a:focus {
   background-color: color-mix(in srgb, var(--wp--preset--color--base) 10%, transparent);
 }
 
@@ -185,6 +234,12 @@ body {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
  */
 /*
 Theme Name: Alamilla
@@ -193,8 +248,8 @@ Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
 /**
-* Header Styles
-*/
+ * Header Styles
+ */
 header {
   transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
@@ -227,10 +282,38 @@ header .wp-block-pages-list__item__link {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
  */
 /**
-* Footer Styles
-*/
+ * Footer Styles
+ */
+/**
+ * Root CSS Variables
+ * 
+ * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
+ * 
+ * @package Alamilla
+ */
+:root {
+  --font-family--primary: var(--wp--preset--font-family--switzer-variable);
+  --font-family--secondary: var(--wp--preset--font-family--fira-code);
+  --heading-h2--font-family: var(--font-family--primary);
+  --heading-h2--font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
+  --heading-h2--font-weight: bold;
+  --heading-h2--letter-spacing: 0;
+  --heading-h2--text-transform: normal;
+  --heading-h5--font-family: var(--font-family--secondary);
+  --heading-h5--font-size: var(--wp--preset--font-size--x-small);
+  --heading-h5--font-weight: 400;
+  --heading-h5--letter-spacing: 0;
+  --heading-h5--text-transform: uppercase;
+}
+
 footer {
   transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
@@ -240,6 +323,17 @@ footer {
   z-index: 10;
   width: 100%;
 }
+@media (max-width: 781px) {
+  footer {
+    text-align: center;
+  }
+  footer .wp-block-columns {
+    gap: var(--wp--preset--spacing--40);
+  }
+  footer .wp-block-social-links {
+    justify-content: center;
+  }
+}
 
 /**
  * Themes
@@ -247,13 +341,17 @@ footer {
  * Styles for themes that can be applied to the body element.
  * These themes are triggered by the themeObserver.js script when certain elements are in view.
  * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
  */
 /**
  * WP Tags Block
  * 
  * Override styles for the Gutenberg tags block.
- * 
- * @package Alamilla
  */
 .taxonomy-post_tag {
   display: flex;
@@ -290,8 +388,6 @@ Author URI: https://alamilla.com
  * WP Button Block
  * 
  * Override styles for the Gutenberg button block.
- * 
- * @package Alamilla
  */
 .wp-block-button a.wp-block-button__link {
   font-family: var(--heading-h5--font-family);
@@ -299,6 +395,32 @@ Author URI: https://alamilla.com
   font-weight: var(--heading-h5--font-weight);
   letter-spacing: var(--heading-h5--letter-spacing);
   text-transform: var(--heading-h5--text-transform);
+}
+
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
+ */
+/**
+ * WP Social Links Block
+ *
+ * Override styles for the Gutenberg tags block.
+ */
+.wp-block-social-links {
+  gap: 1.2rem;
+}
+.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
+  transition: 0.5s ease all;
+  color: var(--wp--preset--color--contrast);
 }
 
 /**
@@ -322,34 +444,15 @@ header + .wp-block-template-part {
 }
 
 /**
+ * Footer Styles
+ */
+/**
  * Pattern: Title Content Accordion (TCA)
  * 
  * Styles for the TCA pattern.
  * 
  * @package Alamilla
  */
-/**
- * Root CSS Variables
- * 
- * Capture WordPress global variables from theme.json and prepare them for use in custom stylesheets.
- * 
- * @package Alamilla
- */
-:root {
-  --font-family--primary: var(--wp--preset--font-family--switzer-variable);
-  --font-family--secondary: var(--wp--preset--font-family--fira-code);
-  --heading-h2--font-family: var(--font-family--primary);
-  --heading-h2--font-size: clamp(2.2rem, 2.2rem + ((1vw - 0.2rem) * 3.273), 4rem);
-  --heading-h2--font-weight: bold;
-  --heading-h2--letter-spacing: 0;
-  --heading-h2--text-transform: normal;
-  --heading-h5--font-family: var(--font-family--secondary);
-  --heading-h5--font-size: var(--wp--preset--font-size--x-small);
-  --heading-h5--font-weight: 400;
-  --heading-h5--letter-spacing: 0;
-  --heading-h5--text-transform: uppercase;
-}
-
 @media (min-width: 1024px) and (max-width: 1600px) {
   .pattern-title-content-accordion .wp-block-columns {
     flex-wrap: wrap !important;

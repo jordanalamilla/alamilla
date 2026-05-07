@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_69fc6c217a315",
-            "label": "Media",
-            "name": "ms_media",
+            "label": "Media Slides",
+            "name": "ms_slides",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -130,5 +130,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778152797
+    "modified": 1778155512
 }

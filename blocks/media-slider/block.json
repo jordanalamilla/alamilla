@@ -3,7 +3,11 @@
     "title": "Media Slider",
     "description": "A slider for displaying images and videos using the Splide JS library.",
     "style": [
+        "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css",
         "file:./media-slider.css"
+    ],
+    "script": [
+        "file:./media-slider.js"
     ],
     "category": "media",
     "icon": "cover-image",

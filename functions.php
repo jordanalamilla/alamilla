@@ -6,6 +6,20 @@
  */
 
 /**
+ * Pre-Print
+ *
+ * Print a data structure in a readable format for debugging purposes.
+ *
+ * @param mixed $data The data to be printed.
+ * @return void
+ */
+function pp( $data ) {
+	echo '<pre>';
+	print_r( $data ); //phpcs:ignore
+	echo '</pre>';
+}
+
+/**
  * Require the enqueue file to load styles and scripts.
  */
 require get_template_directory() . '/includes/enqueue.php';

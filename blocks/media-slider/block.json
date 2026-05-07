@@ -1,0 +1,24 @@
+{
+    "name": "acf/media-slider",
+    "title": "Media Slider",
+    "description": "A slider for displying images and videos using the Splide JS library.",
+    "style": [
+        "file:./media-slider.css"
+    ],
+    "category": "formatting",
+    "icon": "cover-image",
+    "keywords": [
+        "media",
+        "images",
+        "videos",
+        "sliders",
+        "carousels"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "media-slider.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

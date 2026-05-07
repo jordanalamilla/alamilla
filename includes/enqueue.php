@@ -16,7 +16,11 @@
  */
 function alamilla_enqueue() {
 
-	// Styles.
+	/**
+	 * Styles
+	 */
+
+	// Alamilla theme styles.
 	wp_enqueue_style(
 		'alamilla-style',
 		get_stylesheet_uri(),
@@ -24,7 +28,19 @@ function alamilla_enqueue() {
 		wp_get_theme()->get( 'Version' )
 	);
 
-	// Scripts.
+	// Splide JS slider CDN.
+	wp_enqueue_style(
+		'splide-css',
+		'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css',
+		array(),
+		'4.1.4'
+	);
+
+	/**
+	 * Scripts
+	 */
+
+	// Alamilla theme scripts.
 	wp_enqueue_script(
 		'alamilla-scripts',
 		get_template_directory_uri() . '/assets/js/scripts.js',
@@ -33,6 +49,15 @@ function alamilla_enqueue() {
 		array(
 			'type' => 'module',
 		)
+	);
+
+	// Splide JS slider CDN.
+	wp_enqueue_script(
+		'splide-js',
+		'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js',
+		array(),
+		'4.1.4',
+		true
 	);
 }
 add_action( 'wp_enqueue_scripts', 'alamilla_enqueue' );

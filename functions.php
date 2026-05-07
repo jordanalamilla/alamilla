@@ -14,3 +14,8 @@ require get_template_directory() . '/includes/enqueue.php';
  * Require the ES6 file to enable ES6 module support for the custom JavaScript.
  */
 require get_template_directory() . '/includes/es6.php';
+
+/**
+ * Require the register ACF blocks file to register custom ACF blocks.
+ */
+require get_template_directory() . '/includes/register-acf-blocks.php';

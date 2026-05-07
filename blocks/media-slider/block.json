@@ -1,11 +1,11 @@
 {
     "name": "acf/media-slider",
     "title": "Media Slider",
-    "description": "A slider for displying images and videos using the Splide JS library.",
+    "description": "A slider for displaying images and videos using the Splide JS library.",
     "style": [
         "file:./media-slider.css"
     ],
-    "category": "formatting",
+    "category": "media",
     "icon": "cover-image",
     "keywords": [
         "media",

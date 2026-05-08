@@ -9,6 +9,7 @@ header {
     @include mixins.transition;
     color: var(--wp--preset--color--contrast);
     background-color: var(--wp--preset--color--base);
+    margin-block-start: 0 !important;
 
     // Sticky header
     &:has(>.is-position-sticky) {
@@ -24,7 +25,14 @@ header {
     }
 
     // Menu items
-    .wp-block-pages-list__item__link {
+    .wp-block-navigation-item__label {
         @include typography.heading-h5;
+    }
+}
+
+// Scroll to show / hide the header and footer
+body:not(.home).scrolled {
+    header {
+        transform: translateY(-100%);
     }
 }

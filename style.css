@@ -30,13 +30,6 @@ main.wp-block-group {
   padding: 0;
 }
 
-body.scrolled header {
-  transform: translateY(-100%);
-}
-body.scrolled footer {
-  transform: translateY(100%);
-}
-
 /**
  * Themes
  * 
@@ -254,6 +247,7 @@ header {
   transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--base);
+  margin-block-start: 0 !important;
 }
 header:has(> .is-position-sticky) {
   position: fixed;
@@ -268,7 +262,7 @@ header .wp-block-site-title {
   letter-spacing: var(--heading-h5--letter-spacing);
   text-transform: var(--heading-h5--text-transform);
 }
-header .wp-block-pages-list__item__link {
+header .wp-block-navigation-item__label {
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -276,19 +270,10 @@ header .wp-block-pages-list__item__link {
   text-transform: var(--heading-h5--text-transform);
 }
 
-/**
- * Themes
- * 
- * Styles for themes that can be applied to the body element.
- * These themes are triggered by the themeObserver.js script when certain elements are in view.
- * Each theme corresponds to a theme color defined in the WordPress color palette.
- *
- * $themes map — All theme configurations in one place with their text and background colors
- * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
- * @each loop — Automatically generates all .theme-* classes from the map
- * $button-themes list — Specifies which themes get button styling
- * Another @each loop — Applies button styles only to the specified themes
- */
+body:not(.home).scrolled header {
+  transform: translateY(-100%);
+}
+
 /**
  * Footer Styles
  */
@@ -314,15 +299,6 @@ header .wp-block-pages-list__item__link {
   --heading-h5--text-transform: uppercase;
 }
 
-footer {
-  transition: 0.5s ease all;
-  color: var(--wp--preset--color--contrast);
-  background-color: var(--wp--preset--color--base);
-  position: fixed;
-  bottom: calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));
-  z-index: 10;
-  width: 100%;
-}
 @media (max-width: 781px) {
   footer {
     text-align: center;
@@ -472,6 +448,24 @@ header + .wp-block-template-part {
   .pattern-title-content-accordion .wp-block-columns .wp-block-column {
     flex-basis: 100% !important;
   }
+}
+/**
+ * Home
+ *
+ * Styles for the home template.
+ */
+body.home header:has(> .is-position-sticky) {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  color: var(--wp--preset--color--base);
+  background: transparent;
+  mix-blend-mode: difference;
+}
+body.home .wp-block-post-content {
+  margin-block-start: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

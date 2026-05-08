@@ -8,7 +8,6 @@
  */
 
 $block_id = 'media-slider-' . $block['id'];
-
 ?>
 
 <div id="<?php echo esc_attr( $block_id ); ?>" class="acf-block acf-block--media-slider">
@@ -20,6 +19,7 @@ $block_id = 'media-slider-' . $block['id'];
 				<ul class="splide__list">
 
 					<?php
+					// Individual slides.
 					while ( have_rows( 'ms_slides' ) ) {
 						the_row();
 						$ms_type  = get_sub_field( 'ms_type' );

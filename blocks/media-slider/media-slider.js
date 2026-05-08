@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         interval: 8000,
         pagination: false,
         arrows: false,
-        speed: 3000
+        speed: 3000,
+        pauseOnHover: false,
     });
 
     splide.mount();

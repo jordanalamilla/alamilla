@@ -33,11 +33,35 @@
     height: 100vh;
 }
 
+/* Content */
+.ms-content-wrapper {
+    position: absolute;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--wp--preset--spacing--50);
+    color: var(--wp--preset--color--base);
+    padding: var(--wp--preset--spacing--50);
+    bottom: 0;
+    align-items: end;
+}
+
+.ms-content-wrapper h2,
+.ms-content-wrapper h5 {
+    margin: 0;
+}
+
 /* Images and videos */
-.acf-block--media-slider video,
-.acf-block--media-slider img {
+.acf-block--media-slider .splide video,
+.acf-block--media-slider .splide img {
     object-fit: cover;
     object-position: center;
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 781px) {
+    .ms-content-wrapper {
+        grid-template-columns: 1fr;
+    }
 }

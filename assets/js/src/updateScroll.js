@@ -10,10 +10,21 @@ let lastScrollY = window.scrollY;
 export default function updateScroll() {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY) {
-        document.body.classList.add('scrolled');
+    // Scroll behaviour on home
+    if (document.body.classList.contains('home')) {
+        if (currentScrollY > 10) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+
+        // Scroll behaviour on every other page
     } else {
-        document.body.classList.remove('scrolled');
+        if (currentScrollY > lastScrollY) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
     }
 
     lastScrollY = currentScrollY;

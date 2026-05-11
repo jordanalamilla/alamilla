@@ -11,6 +11,12 @@
     transition: 0.5s ease all;
 }
 
+@mixin background-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 @mixin badge {
     @include typography.heading-h5;
     font-size: var(--wp--preset--font-size--x-small);

@@ -1,0 +1,11 @@
+/**
+ * Media Slider block styles.
+ */
+
+/* Overlay */
+.acf-block--post-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 781px) {}

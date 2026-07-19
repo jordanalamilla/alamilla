@@ -8,4 +8,9 @@
     overflow: hidden;
 }
 
+.acf-block--post-slider img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media (max-width: 781px) {}

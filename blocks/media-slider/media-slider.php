@@ -79,7 +79,7 @@ $block_id = 'media-slider-' . $block['id'];
 		</div>
 
 		<!-- Slider -->
-		<div class="splide" aria-label="Media slider.">
+		<div class="splide ms-splide" aria-label="Media slider.">
 			<div class="splide__track">
 				<ul class="splide__list">
 

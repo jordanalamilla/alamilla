@@ -13,16 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
      * 
      * Options available at: https://splidejs.com/guides/options/
      */
-    var splide = new Splide('.splide', {
-        type: 'fade',
-        rewind: true,
-        autoplay: true,
-        interval: 8000,
-        pagination: false,
-        arrows: false,
-        speed: 3000,
-        pauseOnHover: false,
+    document.querySelectorAll('.ms-splide').forEach((carousel) => {
+        new Splide(carousel, {
+            type: 'fade',
+            rewind: true,
+            autoplay: true,
+            interval: 8000,
+            pagination: false,
+            arrows: false,
+            speed: 3000,
+            pauseOnHover: false,
+        }).mount();
     });
-
-    splide.mount();
 });

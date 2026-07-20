@@ -40,9 +40,14 @@ $block_id = 'post-slider-' . $block['id'];
 						?>
 
 						<li class="splide__slide">
-							<?php echo get_the_post_thumbnail( $ps_post->ID, 'large' ); ?>
+							<div class="splide__image" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');"></div>
 							<h4><?php echo esc_html( $ps_post->post_title ); ?></h4>
-							<h6><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
+							<p><?php echo esc_html( $ps_post->post_excerpt ); ?></p>
+							<p>
+								<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>">
+									View Post
+								</a>
+							</p>
 						</li>
 
 					<?php } ?>

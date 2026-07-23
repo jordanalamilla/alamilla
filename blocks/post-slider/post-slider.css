@@ -16,6 +16,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: var(--box-shadow--small);
 }
 
 /* Controls */
@@ -29,6 +30,11 @@
     position: static;
     transform: unset;
     border-radius: unset;
+}
+
+/* Slider */
+.acf-block--post-slider .splide__track {
+    overflow: unset;
 }
 
 @media (max-width: 781px) {}

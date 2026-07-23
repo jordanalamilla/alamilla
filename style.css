@@ -13,6 +13,16 @@ Author URI: https://alamilla.com
  * 
  * @package Alamilla
  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  opacity: 0.9;
+}
+
 /**
 * Global Styles
 * 
@@ -300,6 +310,8 @@ body:not(.home).scrolled header {
   --border-radius--small: 0.5rem;
   --border-radius--medium: 1rem;
   --border-radius--large: 1.5rem;
+  --box-shadow--small: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  --box-shadow--large: 0 1rem 2rem rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 781px) {

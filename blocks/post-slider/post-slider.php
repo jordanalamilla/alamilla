@@ -52,7 +52,7 @@ $block_align = 'align' . $block['align'];
 						<li class="splide__slide">
 							<div class="splide__image" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');"></div>
 							<h4><?php echo esc_html( $ps_post->post_title ); ?></h4>
-							<h5><?php echo esc_html( $ps_post->post_excerpt ); ?></h5>
+							<h6><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
 							<h5>
 								<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>">
 									View Post

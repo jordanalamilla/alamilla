@@ -7,6 +7,7 @@
  */
 
 :root {
+    // Typography
     --font-family--primary: var(--wp--preset--font-family--switzer-variable);
     --font-family--secondary: var(--wp--preset--font-family--fira-code);
 
@@ -22,9 +23,14 @@
     --heading-h5--letter-spacing: 0;
     --heading-h5--text-transform: uppercase;
 
+    // Borders
     --border-radius--small: 0.5rem;
     --border-radius--medium: 1rem;
     --border-radius--large: 1.5rem;
+
+    // Shadows
+    --box-shadow--small: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    --box-shadow--large: 0 1rem 2rem rgba(0, 0, 0, 0.5);
 }
 
 // Breakpoints

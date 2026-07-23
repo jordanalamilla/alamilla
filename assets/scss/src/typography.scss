@@ -21,3 +21,13 @@
     letter-spacing: var(--heading-h5--letter-spacing);
     text-transform: var(--heading-h5--text-transform);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    opacity: 0.9;
+}

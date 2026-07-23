@@ -22,7 +22,6 @@
     display: flex;
     gap: 0.5rem;
     padding: 1rem 0;
-    justify-content: flex-end;
 }
 
 .splide__arrows .splide__arrow {

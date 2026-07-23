@@ -3,6 +3,27 @@
     "title": "Block: Post Slider",
     "fields": [
         {
+            "key": "field_6a5e6540f75c2",
+            "label": "Intro Content",
+            "name": "ps_intro_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6a4abd46f1be7",
             "label": "Posts",
             "name": "ps_posts",
@@ -52,5 +73,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1783283154
+    "modified": 1784571341
 }

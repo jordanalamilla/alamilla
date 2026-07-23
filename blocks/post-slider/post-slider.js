@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.ps-splide').forEach((carousel) => {
         new Splide(carousel, {
             type: 'loop',
-            perPage: 3,
+            perPage: 4,
             perMove: 1,
             gap: '1rem',
             breakpoints: {

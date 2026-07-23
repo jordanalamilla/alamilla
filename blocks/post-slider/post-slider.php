@@ -24,11 +24,18 @@ $block_id = 'post-slider-' . $block['id'];
 		echo '<h3>Post Slider Block Preview</h3>';
 
 	} elseif ( have_rows( 'ps_posts' ) ) {
-		$ps_posts = get_field( 'ps_posts' );
+		$ps_intro_content = get_field( 'ps_intro_content' );
+		$ps_posts         = get_field( 'ps_posts' );
 		?>
 
 		<!-- Slider -->
 		<div class="splide ps-splide" aria-label="Post slider.">
+
+			<!-- Intro content -->
+			<div class="ps-intro-content">
+				<?php echo wp_kses_post( $ps_intro_content ); ?>
+			</div>
+
 			<div class="splide__track">
 				<ul class="splide__list">
 
@@ -42,12 +49,12 @@ $block_id = 'post-slider-' . $block['id'];
 						<li class="splide__slide">
 							<div class="splide__image" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');"></div>
 							<h4><?php echo esc_html( $ps_post->post_title ); ?></h4>
-							<p><?php echo esc_html( $ps_post->post_excerpt ); ?></p>
-							<p>
+							<h5><?php echo esc_html( $ps_post->post_excerpt ); ?></h5>
+							<h5>
 								<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>">
 									View Post
 								</a>
-							</p>
+							</h5>
 						</li>
 
 					<?php } ?>

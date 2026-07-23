@@ -297,6 +297,9 @@ body:not(.home).scrolled header {
   --heading-h5--font-weight: 400;
   --heading-h5--letter-spacing: 0;
   --heading-h5--text-transform: uppercase;
+  --border-radius--small: 0.5rem;
+  --border-radius--medium: 1rem;
+  --border-radius--large: 1.5rem;
 }
 
 @media (max-width: 781px) {
@@ -454,20 +457,16 @@ header + .wp-block-template-part {
  *
  * Styles for the home template.
  */
-body.home header:has(> .is-position-sticky) {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  color: var(--wp--preset--color--contrast);
-  background: var(--wp--preset--color--base);
+body.home .entry-content {
+  padding-top: 50px;
 }
 body.home .wp-block-post-content {
   margin-block-start: 0;
 }
-body.home:not(.scrolled) header {
-  color: var(--wp--preset--color--base);
-  background: transparent;
+.hero-heading {
+  font-size: clamp(2rem, 10vw, 20rem);
+  line-height: 0.9;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */

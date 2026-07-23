@@ -6,6 +6,8 @@
 .acf-block--media-slider {
     position: relative;
     overflow: hidden;
+    margin: 1rem;
+    border-radius: var(--border-radius--large);
 }
 
 .acf-block--media-slider:before {
@@ -29,8 +31,8 @@
 
 /* Media containing element */
 .acf-block--media-slider .media-wrapper {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    aspect-ratio: 16/9;
 }
 
 /* Content */
@@ -63,5 +65,9 @@
 @media (max-width: 781px) {
     .ms-content-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .acf-block--media-slider .media-wrapper {
+        aspect-ratio: 3/4;
     }
 }

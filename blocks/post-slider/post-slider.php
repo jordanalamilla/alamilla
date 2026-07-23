@@ -7,11 +7,14 @@
  * @package Alamilla
  */
 
-$block_id = 'post-slider-' . $block['id'];
+$block_id    = 'post-slider-' . $block['id'];
+$block_align = 'align' . $block['align'];
+
+// pp( $block );
 ?>
 
 <div id="<?php echo esc_attr( $block_id ); ?>"
-	class="acf-block acf-block--post-slider"
+	class="<?php echo esc_attr( $block_align ); ?> acf-block acf-block--post-slider"
 	data-preview="<?php echo $is_preview ? 'true' : 'false'; ?>">
 
 	<?php

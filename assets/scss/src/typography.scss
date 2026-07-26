@@ -31,3 +31,9 @@ h6,
 p {
     opacity: 0.9;
 }
+
+.hero-heading {
+    font-size: clamp(2rem, 18vw, 9rem);
+    line-height: 0.75;
+    letter-spacing: -0.05em;
+}

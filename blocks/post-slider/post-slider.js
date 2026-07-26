@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: 'loop',
             perPage: 3,
             perMove: 1,
-            gap: '1rem',
+            gap: '2rem',
             pagination: false,
             breakpoints: {
                 1024: {

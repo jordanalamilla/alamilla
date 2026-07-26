@@ -32,6 +32,7 @@ header {
 
     // Menu items
     .wp-block-navigation-item__label {
+        @include mixins.badge;
         @include typography.heading-h5;
     }
 }

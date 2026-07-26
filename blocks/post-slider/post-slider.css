@@ -19,6 +19,28 @@
     /* box-shadow: var(--box-shadow--small); */
 }
 
+/* Title Section */
+.splide__title-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.splide__title,
+.splide__tags {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Excerpt */
+.splide__excerpt {
+    margin-top: 0;
+}
+
 /* Controls */
 .splide__arrows {
     display: flex;

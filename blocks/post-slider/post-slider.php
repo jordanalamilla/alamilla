@@ -50,14 +50,43 @@ $block_align = 'align' . $block['align'];
 						?>
 
 						<li class="splide__slide">
+							<!-- Image -->
 							<div class="splide__image" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');"></div>
-							<h4><?php echo esc_html( $ps_post->post_title ); ?></h4>
-							<h6><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
-							<h5>
-								<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>">
+							
+							<div class="splide__title-section">
+
+								<!-- Title -->
+								<h4 class="splide__title"><?php echo esc_html( $ps_post->post_title ); ?></h4>
+								
+								<!-- Tags -->
+								<div class="splide__tags">
+									<?php
+									$ps_tags = get_the_tags( $id );
+
+									if ( $ps_tags ) {
+										$ps_tags = array_slice( $ps_tags, 0, 3 );
+
+										foreach ( $ps_tags as $ps_tag ) {
+											?>
+											<a href="<?php echo esc_url( get_tag_link( $ps_tag->term_id ) ); ?>" class="splide__tag badge">
+												<?php echo esc_html( $ps_tag->name ); ?>
+											</a>
+											<?php
+										}
+									}
+									?>
+								</div>
+							</div>
+
+							<!-- Excerpt -->
+							<h6 class="splide__excerpt"><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
+
+							<!-- Link -->
+							<h6>
+								<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>" class="splide__link">
 									View Post
 								</a>
-							</h5>
+							</h6>
 						</li>
 
 					<?php } ?>

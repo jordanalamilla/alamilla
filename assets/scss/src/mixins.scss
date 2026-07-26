@@ -26,4 +26,9 @@
     border-radius: 9999px;
     color: var(--wp--preset--color--contrast);
     background-color: var(--wp--preset--color--accent-4);
+    text-decoration: none;
+}
+
+.badge {
+    @include badge;
 }

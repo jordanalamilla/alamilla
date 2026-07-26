@@ -6,28 +6,12 @@
 
 body.home {
     .entry-content {
-        padding-top: 50px;
+        padding-top: 78px;
     }
-
-    // Sticky header modifications
-    // header:has(>.is-position-sticky) {
-    //     position: fixed;
-    //     top: 0;
-    //     // bottom: 0;
-    //     z-index: 10;
-    //     width: 100%;
-    //     color: var(--wp--preset--color--contrast);
-    //     background: var(--wp--preset--color--base);
-    // }
 
     // Content modifications
     .wp-block-post-content {
         margin-block-start: 0;
-    }
-
-    &:not(.scrolled) header {
-        // color: var(--wp--preset--color--base);
-        // background: transparent;
     }
 }
 

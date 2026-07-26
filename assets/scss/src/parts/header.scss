@@ -19,9 +19,15 @@ header {
         width: 100%;
     }
 
-    // Site title
-    .wp-block-site-title {
-        @include typography.heading-h5;
+    &>.is-position-sticky {
+        padding: 0.5rem 1rem;
+    }
+
+    // Site logo
+    .wp-block-site-logo svg {
+        @include mixins.transition;
+        width: 80px;
+        opacity: 0.9;
     }
 
     // Menu items
@@ -31,7 +37,7 @@ header {
 }
 
 // Scroll to show / hide the header and footer
-body:not(.home).scrolled {
+body.scrolled {
     header {
         transform: translateY(-100%);
     }

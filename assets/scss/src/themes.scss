@@ -50,6 +50,11 @@ $themes: (
         background-color: var(#{$bg-var});
     }
 
+    // Site logo SVG
+    .wp-block-site-logo svg {
+        fill: var(#{$text-var});
+    }
+
     // Mobile menu
     .wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
         color: var(#{$text-var}) !important;

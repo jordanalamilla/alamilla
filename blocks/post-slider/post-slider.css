@@ -11,12 +11,12 @@
 
 /* Image */
 .acf-block--post-slider .splide__image {
-    border-radius: var(--border-radius--medium);
+    /* border-radius: var(--border-radius--medium); */
     aspect-ratio: 4/3;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: var(--box-shadow--small);
+    /* box-shadow: var(--box-shadow--small); */
 }
 
 /* Controls */

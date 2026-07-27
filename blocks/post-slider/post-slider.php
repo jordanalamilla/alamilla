@@ -31,14 +31,15 @@ $block_align = 'align' . $block['align'];
 		$ps_posts         = get_field( 'ps_posts' );
 		?>
 
-		<!-- Slider -->
-		<div class="splide ps-splide" aria-label="Post slider.">
-
+		<?php if ( $ps_intro_content ) { ?>
 			<!-- Intro content -->
 			<div class="ps-intro-content">
 				<?php echo wp_kses_post( $ps_intro_content ); ?>
 			</div>
+		<?php } ?>
 
+		<!-- Slider -->
+		<div class="splide ps-splide" aria-label="Post slider.">
 			<div class="splide__track">
 				<ul class="splide__list">
 

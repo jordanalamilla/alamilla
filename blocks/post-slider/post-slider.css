@@ -46,6 +46,9 @@
     display: flex;
     gap: 0.5rem;
     padding: 1rem 0;
+    position: absolute;
+    top: -73px;
+    right: 0;
 }
 
 .splide__arrows .splide__arrow {
@@ -55,8 +58,18 @@
 }
 
 /* Slider */
+.acf-block--post-slider .ps-splide {}
+
 .acf-block--post-slider .splide__track {
     overflow: unset;
+}
+
+.acf-block--post-slider .ps-intro-content {
+    margin-bottom: 1.5rem;
+}
+
+.acf-block--post-slider .ps-intro-content h2 {
+    margin: 0;
 }
 
 @media (max-width: 781px) {}

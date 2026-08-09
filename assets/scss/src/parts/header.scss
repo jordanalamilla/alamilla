@@ -8,7 +8,6 @@
 header {
     @include mixins.transition;
     color: var(--wp--preset--color--contrast);
-    background-color: var(--wp--preset--color--base);
     margin-block-start: 0 !important;
 
     // Sticky header

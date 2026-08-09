@@ -302,7 +302,6 @@ Author URI: https://alamilla.com
 header {
   transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
-  background-color: var(--wp--preset--color--base);
   margin-block-start: 0 !important;
 }
 header:has(> .is-position-sticky) {

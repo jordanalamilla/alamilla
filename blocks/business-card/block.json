@@ -1,0 +1,26 @@
+{
+    "name": "acf/business-card",
+    "title": "Business Card",
+    "description": "Display a logo, contact and other info about your organization.",
+    "style": [
+        "file:./business-card.css"
+    ],
+    "script": [
+        "file:./business-card.js"
+    ],
+    "category": "Information",
+    "icon": "index-card",
+    "keywords": [
+        "contact",
+        "logo",
+        "information"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "business-card.php"
+    },
+    "supports": {
+        "anchor": true,
+        "mode": true
+    }
+}

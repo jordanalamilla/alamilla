@@ -19,6 +19,7 @@ function alamilla_register_acf_blocks() {
 	// Media slider.
 	register_block_type( get_template_directory() . '/blocks/media-slider' );
 	register_block_type( get_template_directory() . '/blocks/post-slider' );
+	register_block_type( get_template_directory() . '/blocks/business-card' );
 }
 
 add_action( 'acf/init', 'alamilla_register_acf_blocks' );

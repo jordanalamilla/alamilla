@@ -1,0 +1,8 @@
+/**
+ * Business Card block styles.
+ */
+
+/* Overlay */
+.acf-block--business-card {}
+
+@media (max-width: 781px) {}

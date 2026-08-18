@@ -38,8 +38,7 @@
                 "id": ""
             },
             "post_type": [
-                "web-project",
-                "art-project"
+                "project"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -73,5 +72,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784571341
+    "modified": 1786671245
 }

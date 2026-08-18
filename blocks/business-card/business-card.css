@@ -3,6 +3,31 @@
  */
 
 /* Overlay */
-.acf-block--business-card {}
+.acf-block--business-card {
+    height: calc(100vh - 10rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acf-block--business-card .bc-block-content-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 1rem;
+}
+
+.acf-block--business-card .bc-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acf-block--business-card .bc-text-wrapper {
+    margin-top: 1rem;
+}
+
+.acf-block--business-card .bc-content-wrapper>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 @media (max-width: 781px) {}

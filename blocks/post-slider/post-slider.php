@@ -46,7 +46,13 @@ $block_align = 'align' . $block['align'];
 					<?php
 					// Individual slides.
 					foreach ( $ps_posts as $id ) {
-						$ps_post = get_post( $id );
+						$ps_post          = get_post( $id );
+						$terms            = get_the_terms( $ps_post->ID, 'project-category' );
+						$project_category = 'Uncategorized';
+
+						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+							$project_category = $terms[0]->name;
+						}
 						// pp( $ps_post );
 						?>
 
@@ -54,8 +60,13 @@ $block_align = 'align' . $block['align'];
 							<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>" class="splide__link">
 								<span class="splide__wrapper" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');">
 								
-									<!-- Title -->
 									<span class="splide__title-section">
+										<!-- Category -->
+										<h5 class="splide__category cat-<?php echo esc_attr( strtolower( $project_category ) ); ?>">
+											<?php echo esc_html( $project_category ); ?>
+										</h5>
+
+										<!-- Title -->
 										<h3 class="splide__title"><?php echo esc_html( $ps_post->post_title ); ?></h3>
 									</span>
 

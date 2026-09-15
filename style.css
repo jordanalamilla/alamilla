@@ -38,8 +38,11 @@ html {
   margin-top: 0 !important;
 }
 
-#wpadminbar {
-  display: none !important;
+body.admin-bar {
+  margin-top: 32px;
+}
+body.admin-bar .wp-block-navigation__responsive-container {
+  top: 32px;
 }
 
 main.wp-block-group {
@@ -366,11 +369,14 @@ body.scrolled header {
   --heading-h5--font-weight: 400;
   --heading-h5--letter-spacing: 0;
   --heading-h5--text-transform: uppercase;
-  --border-radius--small: 0.5rem;
+  --border-radius--small: 5px;
   --border-radius--medium: 1rem;
   --border-radius--large: 1.5rem;
+  --border--small: 1px solid;
   --box-shadow--small: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   --box-shadow--large: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  --hover-transition: 0.2s ease all;
+  --hover-translate--up: translateY(-10px);
 }
 
 @media (max-width: 781px) {

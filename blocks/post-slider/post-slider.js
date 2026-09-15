@@ -16,15 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.ps-splide').forEach((carousel) => {
         new Splide(carousel, {
             type: 'loop',
-            perPage: 3,
+            perPage: 4,
             perMove: 1,
             gap: '2rem',
             pagination: false,
             breakpoints: {
-                1024: {
+                1800: {
+                    perPage: 3,
+                },
+                1300: {
                     perPage: 2,
                 },
-                540: {
+                760: {
                     perPage: 1,
                 },
             },

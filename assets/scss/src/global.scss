@@ -10,9 +10,36 @@ html {
 }
 
 #wpadminbar {
-    display: none !important;
+    // display: none !important;
+}
+
+body.admin-bar {
+    margin-top: 32px;
+
+    .wp-block-navigation__responsive-container {
+        top: 32px;
+    }
 }
 
 main.wp-block-group {
     padding: 0;
 }
+
+// <!-- Tags -->
+// <span class="splide__tags">
+//     <?php
+//     $ps_tags = get_the_tags( $id );
+
+//     if ( $ps_tags ) {
+//         $ps_tags = array_slice( $ps_tags, 0, 3 );
+
+//         foreach ( $ps_tags as $ps_tag ) {
+//             ?>
+//             <a href="<?php echo esc_url( get_tag_link( $ps_tag->term_id ) ); ?>" class="splide__tag badge">
+//                 <?php echo esc_html( $ps_tag->name ); ?>
+//             </a>
+//             <?php
+//         }
+//     }
+//     ?>
+// </span>

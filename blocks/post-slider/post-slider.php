@@ -45,35 +45,34 @@ $block_align = 'align' . $block['align'];
 
 					<?php
 					// Individual slides.
-					foreach ( $ps_posts as $id ) {
-						$ps_post          = get_post( $id );
+					foreach ( $ps_posts as $ps_id ) {
+						$ps_post          = get_post( $ps_id );
 						$terms            = get_the_terms( $ps_post->ID, 'project-category' );
 						$project_category = 'Uncategorized';
 
 						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 							$project_category = $terms[0]->name;
 						}
-						// pp( $ps_post );
 						?>
 
 						<li class="splide__slide">
 							<a href="<?php echo esc_html( get_permalink( $ps_post->ID ) ); ?>" class="splide__link">
 								<span class="splide__wrapper" style="background-image: url('<?php echo esc_attr( get_the_post_thumbnail_url( $ps_post->ID, 'large' ) ); ?>');">
 								
+									<!-- Category -->
 									<span class="splide__title-section">
-										<!-- Category -->
 										<h5 class="splide__category cat-<?php echo esc_attr( strtolower( $project_category ) ); ?>">
 											<?php echo esc_html( $project_category ); ?>
 										</h5>
-
-										<!-- Title -->
-										<h3 class="splide__title"><?php echo esc_html( $ps_post->post_title ); ?></h3>
 									</span>
 
-									<!-- Excerpt & link -->
+									<!-- View button -->
+									<h6 class="splide__button">View Project</h6>
+
+									<!-- Title & excerpt -->
 									<span class="splide__content-section">
-										<h5 class="splide__excerpt"><?php echo esc_html( $ps_post->post_excerpt ); ?></h5>
-										<h6 class="splide__button">View Project</h6>
+										<h3 class="splide__title"><?php echo esc_html( $ps_post->post_title ); ?></h3>
+										<h6 class="splide__excerpt"><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
 									</span>
 								</span>
 							</a>

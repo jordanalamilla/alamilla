@@ -66,13 +66,11 @@ $block_align = 'align' . $block['align'];
 										</h5>
 									</span>
 
-									<!-- View button -->
-									<h6 class="splide__button">View Project</h6>
-
 									<!-- Title & excerpt -->
 									<span class="splide__content-section">
 										<h3 class="splide__title"><?php echo esc_html( $ps_post->post_title ); ?></h3>
 										<h6 class="splide__excerpt"><?php echo esc_html( $ps_post->post_excerpt ); ?></h6>
+										<h5 class="splide__button">View Project</h5>
 									</span>
 								</span>
 							</a>

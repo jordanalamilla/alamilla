@@ -6,7 +6,6 @@
 @use "../typography.scss";
 
 header {
-    @include mixins.transition;
     color: var(--wp--preset--color--contrast);
     margin-block-start: 0 !important;
 
@@ -23,22 +22,58 @@ header {
     }
 
     // Site logo
-    .wp-block-site-logo svg {
-        @include mixins.transition;
-        width: 80px;
-        opacity: 0.9;
+    .wp-block-site-logo {
+
+        svg {
+            width: 80px;
+        }
     }
 
     // Menu items
+    .wp-block-navigation {
+        @include mixins.transition;
+        position: fixed;
+        z-index: 10;
+        // width: calc(100% - 60px);
+        width: 265px;
+        height: 50px;
+        right: var(--wp--preset--spacing--50);
+    }
+
     .wp-block-navigation-item__label {
         @include mixins.badge;
         @include typography.heading-h5;
     }
 }
 
-// Scroll to show / hide the header and footer
-body.scrolled {
-    header {
-        transform: translateY(-100%);
+/**
+ * Mobile
+ */
+
+@media (min-width: 600px) {
+
+    // Scroll to show / hide the header and footer
+    body.scrolled {
+        .wp-block-navigation {
+            opacity: 0;
+        }
     }
+}
+
+// Single project header
+body.single-project header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);
+
+    .wp-block-site-logo {
+        mix-blend-mode: difference;
+        filter: invert(1);
+    }
+}
+
+// Header for the rest of the site
+body:not(.single-project) header+.wp-block-group {
+    padding-top: 100px !important;
 }

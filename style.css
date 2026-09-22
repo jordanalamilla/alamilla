@@ -41,9 +41,6 @@ html {
 body.admin-bar {
   margin-top: 32px;
 }
-body.admin-bar .wp-block-navigation__responsive-container {
-  top: 32px;
-}
 
 main.wp-block-group {
   padding: 0;
@@ -303,7 +300,6 @@ Author URI: https://alamilla.com
  * Header Styles
  */
 header {
-  transition: 0.5s ease all;
   color: var(--wp--preset--color--contrast);
   margin-block-start: 0 !important;
 }
@@ -317,9 +313,15 @@ header > .is-position-sticky {
   padding: 0.5rem 1rem;
 }
 header .wp-block-site-logo svg {
-  transition: 0.5s ease all;
   width: 80px;
-  opacity: 0.9;
+}
+header .wp-block-navigation {
+  transition: 0.5s ease all;
+  position: fixed;
+  z-index: 10;
+  width: 265px;
+  height: 50px;
+  right: var(--wp--preset--spacing--50);
 }
 header .wp-block-navigation-item__label {
   font-family: var(--heading-h5--font-family);
@@ -342,8 +344,27 @@ header .wp-block-navigation-item__label {
   text-transform: var(--heading-h5--text-transform);
 }
 
-body.scrolled header {
-  transform: translateY(-100%);
+/**
+ * Mobile
+ */
+@media (min-width: 600px) {
+  body.scrolled .wp-block-navigation {
+    opacity: 0;
+  }
+}
+body.single-project header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent);
+}
+body.single-project header .wp-block-site-logo {
+  mix-blend-mode: difference;
+  filter: invert(1);
+}
+
+body:not(.single-project) header + .wp-block-group {
+  padding-top: 100px !important;
 }
 
 /**

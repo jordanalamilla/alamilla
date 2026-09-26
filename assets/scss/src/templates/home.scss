@@ -5,12 +5,17 @@
  */
 
 body.home {
-    .entry-content {
-        padding-top: 78px;
+    .wp-site-blocks {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     // Content modifications
     .wp-block-post-content {
         margin-block-start: 0;
     }
+
+    footer {}
 }

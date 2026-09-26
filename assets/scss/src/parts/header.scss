@@ -44,18 +44,23 @@ header {
         @include mixins.badge;
         @include typography.heading-h5;
     }
-}
 
-/**
- * Mobile
- */
+    // Mobile menu
+    .wp-block-navigation__responsive-close {
+        margin-top: 10px;
+    }
 
-@media (min-width: 600px) {
+    .wp-block-navigation__responsive-container-close,
+    .wp-block-navigation__responsive-container-open {
+        background-color: var(--wp--preset--color--accent-1);
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: var(--box-shadow--small);
 
-    // Scroll to show / hide the header and footer
-    body.scrolled {
-        .wp-block-navigation {
-            opacity: 0;
+        svg {
+            fill: var(--wp--preset--color--base);
+            width: 20px;
+            height: 20px;
         }
     }
 }
@@ -75,5 +80,19 @@ body.single-project header {
 
 // Header for the rest of the site
 body:not(.single-project) header+.wp-block-group {
-    padding-top: 100px !important;
+    // padding-top: 100px !important;
+}
+
+/**
+ * Mobile
+ */
+
+@media (min-width: 600px) {
+
+    // Scroll to show / hide the header and footer
+    body.scrolled {
+        .wp-block-navigation {
+            opacity: 0;
+        }
+    }
 }

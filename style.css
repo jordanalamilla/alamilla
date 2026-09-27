@@ -375,7 +375,7 @@ body.single-project header .wp-block-site-logo {
  * Mobile
  */
 @media (min-width: 600px) {
-  body.scrolled .wp-block-navigation {
+  body.scrolled header .wp-block-navigation {
     opacity: 0;
   }
 }
@@ -402,6 +402,11 @@ body.single-project header .wp-block-site-logo {
   --heading-h5--font-weight: 400;
   --heading-h5--letter-spacing: 0;
   --heading-h5--text-transform: uppercase;
+  --heading-h6--font-family: var(--font-family--primary);
+  --heading-h6--font-size: var(--wp--preset--font-size--small);
+  --heading-h6--font-weight: 400;
+  --heading-h6--letter-spacing: 0;
+  --heading-h6--text-transform: normal;
   --border-radius--small: 5px;
   --border-radius--medium: 1rem;
   --border-radius--large: 1.5rem;
@@ -412,6 +417,22 @@ body.single-project header .wp-block-site-logo {
   --hover-translate--up: translateY(-10px);
 }
 
+/*
+Theme Name: Alamilla
+Description: The portfolio website for Jordan Michael Alamilla.
+Author: Jordan Michael Alamilla
+Author URI: https://alamilla.com
+*/
+footer {
+  opacity: 0.7;
+}
+footer .wp-block-navigation-item__label {
+  font-family: var(--heading-h6--font-family);
+  font-size: var(--heading-h6--font-size);
+  font-weight: var(--heading-h6--font-weight);
+  letter-spacing: var(--heading-h6--letter-spacing);
+  text-transform: var(--heading-h6--text-transform);
+}
 @media (max-width: 781px) {
   footer {
     text-align: center;

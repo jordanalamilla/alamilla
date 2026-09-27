@@ -23,6 +23,12 @@
     --heading-h5--letter-spacing: 0;
     --heading-h5--text-transform: uppercase;
 
+    --heading-h6--font-family: var(--font-family--primary);
+    --heading-h6--font-size: var(--wp--preset--font-size--small);
+    --heading-h6--font-weight: 400;
+    --heading-h6--letter-spacing: 0;
+    --heading-h6--text-transform: normal;
+
     // Borders
     --border-radius--small: 5px;
     --border-radius--medium: 1rem;

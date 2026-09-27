@@ -91,7 +91,7 @@ body:not(.single-project) header+.wp-block-group {
 
     // Scroll to show / hide the header and footer
     body.scrolled {
-        .wp-block-navigation {
+        header .wp-block-navigation {
             opacity: 0;
         }
     }

@@ -66,7 +66,7 @@
 }
 
 .splide__category.cat-multimedia:before {
-    background-color: var(--wp--preset--color--base);
+    background-color: var(--wp--preset--color--accent-4);
 }
 
 .splide__category.cat-coding:before {

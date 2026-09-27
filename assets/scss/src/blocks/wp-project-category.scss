@@ -1,0 +1,45 @@
+/**
+ * WP Tags Block
+ * 
+ * Override styles for the Gutenberg tags block.
+ */
+
+@use "../typography";
+
+.taxonomy-project-category a {
+    @include typography.heading-h5;
+    margin-top: unset;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 0.5rem;
+    }
+
+    &[href*="multimedia"]:before {
+        background-color: var(--wp--preset--color--accent-4);
+    }
+
+    &[href*="coding"]:before {
+        background-color: var(--wp--preset--color--accent-1);
+    }
+
+    &[href*="artwork"]:before {
+        background-color: var(--wp--preset--color--accent-2);
+    }
+
+    &[href*="deesign"]:before {
+        background-color: var(--wp--preset--color--accent-3);
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}

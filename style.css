@@ -534,6 +534,52 @@ Author URI: https://alamilla.com
   color: var(--wp--preset--color--contrast);
 }
 
+/*
+Theme Name: Alamilla
+Description: The portfolio website for Jordan Michael Alamilla.
+Author: Jordan Michael Alamilla
+Author URI: https://alamilla.com
+*/
+/**
+ * WP Tags Block
+ * 
+ * Override styles for the Gutenberg tags block.
+ */
+.taxonomy-project-category a {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
+  margin-top: unset;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.taxonomy-project-category a:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.5rem;
+}
+.taxonomy-project-category a[href*=multimedia]:before {
+  background-color: var(--wp--preset--color--accent-4);
+}
+.taxonomy-project-category a[href*=coding]:before {
+  background-color: var(--wp--preset--color--accent-1);
+}
+.taxonomy-project-category a[href*=artwork]:before {
+  background-color: var(--wp--preset--color--accent-2);
+}
+.taxonomy-project-category a[href*=deesign]:before {
+  background-color: var(--wp--preset--color--accent-3);
+}
+.taxonomy-project-category a:hover, .taxonomy-project-category a:focus {
+  text-decoration: underline;
+}
+
 /**
  * Project Banner
  *

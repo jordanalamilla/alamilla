@@ -5,6 +5,19 @@
  */
 
 body.home {
+
+    // Header
+    header {
+        &>.wp-block-group {
+            min-height: 96px;
+        }
+
+        .wp-block-site-logo {
+            display: none;
+        }
+    }
+
+    // Content modifications
     .wp-site-blocks {
         height: 100vh;
         display: flex;
@@ -12,10 +25,7 @@ body.home {
         justify-content: space-between;
     }
 
-    // Content modifications
     .wp-block-post-content {
         margin-block-start: 0;
     }
-
-    footer {}
 }

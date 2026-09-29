@@ -635,6 +635,12 @@ header + .wp-block-template-part {
  *
  * Styles for the home template.
  */
+body.home header > .wp-block-group {
+  min-height: 96px;
+}
+body.home header .wp-block-site-logo {
+  display: none;
+}
 body.home .wp-site-blocks {
   height: 100vh;
   display: flex;

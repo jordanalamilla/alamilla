@@ -46,6 +46,10 @@ main.wp-block-group {
   padding: 0;
 }
 
+.wp-block-navigation {
+  gap: 1rem;
+}
+
 /**
  * Themes
  * 

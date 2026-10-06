@@ -51,28 +51,13 @@ $block_id = 'business-card-' . $block['id'];
 				// Rows.
 				while ( have_rows( 'bc_row' ) ) {
 					the_row();
+					$bc_content = get_sub_field( 'bc_content' );
 					?>
 
 					<div class="bc-row">
-
-						<?php
-						// Columns.
-						if ( have_rows( 'bc_column' ) ) {
-							while ( have_rows( 'bc_column' ) ) {
-								the_row();
-								$bc_content = get_sub_field( 'bc_content' );
-								?>
-
-								<div class="bc-column">
-									<div class="bc-content-wrapper">
-										<?php echo wp_kses_post( $bc_content ); ?>
-									</div>
-								</div>
-
-								<?php
-							}
-						}
-						?>
+						<div class="bc-content-wrapper">
+							<?php echo wp_kses_post( $bc_content ); ?>
+						</div>
 					</div>
 				
 					<?php

@@ -328,6 +328,9 @@ header .wp-block-navigation__responsive-container-open svg {
   width: 20px;
   height: 20px;
 }
+header .wp-block-navigation__overlay-container .wp-block-navigation:first-of-type {
+  min-height: 60vh;
+}
 
 body.single-project header {
   position: absolute;

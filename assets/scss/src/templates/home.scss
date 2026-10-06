@@ -15,9 +15,16 @@ body.home {
         .wp-block-site-logo {
             display: none;
         }
+
+        // Mobile menu
+        @media (max-width: 599px) {
+            &>.wp-block-group {
+                justify-content: flex-end;
+            }
+        }
     }
 
-    // Content modifications
+    // Content spacing
     .wp-site-blocks {
         height: 100vh;
         display: flex;

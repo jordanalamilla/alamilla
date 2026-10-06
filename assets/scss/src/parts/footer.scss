@@ -4,15 +4,33 @@
 
 @use "../vars.scss";
 @use "../typography.scss";
+@use "../mixins.scss";
 
-// Hide the header when not scrolled
 footer {
-    opacity: 0.7;
 
-    .wp-block-navigation-item__label {
-        @include typography.heading-h6;
+    .wp-block-column {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:first-of-type {
+            justify-content: flex-start;
+        }
+
+        &:last-of-type {
+            justify-content: flex-end;
+        }
     }
 
+    .wp-block-navigation__container {
+        justify-content: center
+    }
+
+    .wp-block-navigation-item__label {
+        @include mixins.badge;
+    }
+
+    // Mobile
     @media (max-width: vars.$mobile-max) {
         text-align: center;
 
@@ -20,8 +38,16 @@ footer {
             gap: var(--wp--preset--spacing--40);
         }
 
-        .wp-block-social-links {
-            justify-content: center;
+        .wp-block-column {
+
+            &:first-of-type,
+            &:last-of-type {
+                justify-content: center;
+            }
+
+            .has-text-align-right {
+                text-align: center;
+            }
         }
     }
 }

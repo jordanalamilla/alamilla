@@ -315,45 +315,14 @@ header > .is-position-sticky {
 header .wp-block-site-logo svg {
   width: 80px;
 }
-header .wp-block-navigation {
-  transition: 0.5s ease all;
-  position: fixed;
-  z-index: 10;
-  width: 265px;
-  height: 50px;
-  right: var(--wp--preset--spacing--50);
-}
-header .wp-block-navigation-item__label {
-  font-family: var(--heading-h5--font-family);
-  font-size: var(--heading-h5--font-size);
-  font-weight: var(--heading-h5--font-weight);
-  letter-spacing: var(--heading-h5--letter-spacing);
-  text-transform: var(--heading-h5--text-transform);
-  font-size: var(--wp--preset--font-size--x-small);
-  display: inline-block;
-  padding: 5px 14px;
-  line-height: 1.2;
-  border-radius: 9999px;
-  color: var(--wp--preset--color--contrast);
-  background-color: var(--wp--preset--color--accent-4);
-  text-decoration: none;
-  font-family: var(--heading-h5--font-family);
-  font-size: var(--heading-h5--font-size);
-  font-weight: var(--heading-h5--font-weight);
-  letter-spacing: var(--heading-h5--letter-spacing);
-  text-transform: var(--heading-h5--text-transform);
-}
-header .wp-block-navigation__responsive-close {
-  margin-top: 10px;
-}
-header .wp-block-navigation__responsive-container-close,
+header .wp-block-navigation-overlay-close,
 header .wp-block-navigation__responsive-container-open {
   background-color: var(--wp--preset--color--accent-1);
   padding: 10px;
   border-radius: 50%;
   box-shadow: var(--box-shadow--small);
 }
-header .wp-block-navigation__responsive-container-close svg,
+header .wp-block-navigation-overlay-close svg,
 header .wp-block-navigation__responsive-container-open svg {
   fill: var(--wp--preset--color--base);
   width: 20px;
@@ -372,11 +341,34 @@ body.single-project header .wp-block-site-logo {
 }
 
 /**
- * Mobile
+ * Desktop
  */
 @media (min-width: 600px) {
   body.scrolled header .wp-block-navigation {
     opacity: 0;
+  }
+  header .wp-block-navigation {
+    transition: 0.5s ease all;
+    position: fixed;
+    z-index: 10;
+    width: 265px;
+    height: 50px;
+    right: var(--wp--preset--spacing--50);
+  }
+  header .wp-block-navigation-item__label {
+    font-family: var(--heading-h5--font-family);
+    font-size: var(--heading-h5--font-size);
+    font-weight: var(--heading-h5--font-weight);
+    letter-spacing: var(--heading-h5--letter-spacing);
+    text-transform: var(--heading-h5--text-transform);
+    font-size: var(--wp--preset--font-size--x-small);
+    display: inline-block;
+    padding: 5px 14px;
+    line-height: 1.2;
+    border-radius: 9999px;
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--accent-4);
+    text-decoration: none;
   }
 }
 /**
@@ -423,15 +415,47 @@ Description: The portfolio website for Jordan Michael Alamilla.
 Author: Jordan Michael Alamilla
 Author URI: https://alamilla.com
 */
-footer {
-  opacity: 0.7;
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
+ */
+footer .wp-block-column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .wp-block-column:first-of-type {
+  justify-content: flex-start;
+}
+footer .wp-block-column:last-of-type {
+  justify-content: flex-end;
+}
+footer .wp-block-navigation__container {
+  justify-content: center;
 }
 footer .wp-block-navigation-item__label {
-  font-family: var(--heading-h6--font-family);
-  font-size: var(--heading-h6--font-size);
-  font-weight: var(--heading-h6--font-weight);
-  letter-spacing: var(--heading-h6--letter-spacing);
-  text-transform: var(--heading-h6--text-transform);
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
+  font-size: var(--wp--preset--font-size--x-small);
+  display: inline-block;
+  padding: 5px 14px;
+  line-height: 1.2;
+  border-radius: 9999px;
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--accent-4);
+  text-decoration: none;
 }
 @media (max-width: 781px) {
   footer {
@@ -440,8 +464,11 @@ footer .wp-block-navigation-item__label {
   footer .wp-block-columns {
     gap: var(--wp--preset--spacing--40);
   }
-  footer .wp-block-social-links {
+  footer .wp-block-column:first-of-type, footer .wp-block-column:last-of-type {
     justify-content: center;
+  }
+  footer .wp-block-column .has-text-align-right {
+    text-align: center;
   }
 }
 
@@ -640,6 +667,11 @@ body.home header > .wp-block-group {
 }
 body.home header .wp-block-site-logo {
   display: none;
+}
+@media (max-width: 599px) {
+  body.home header > .wp-block-group {
+    justify-content: flex-end;
+  }
 }
 body.home .wp-site-blocks {
   height: 100vh;

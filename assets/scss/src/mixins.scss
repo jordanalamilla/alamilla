@@ -8,7 +8,7 @@
 @use "./typography";
 
 @mixin transition {
-    transition: 0.5s ease all;
+    transition: 0.2s ease all;
 }
 
 @mixin background-contain {

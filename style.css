@@ -355,7 +355,7 @@ body.single-project header .wp-block-site-logo {
     opacity: 0;
   }
   header .wp-block-navigation {
-    transition: 0.5s ease all;
+    transition: 0.2s ease all;
     position: fixed;
     z-index: 10;
     width: 265px;
@@ -516,7 +516,7 @@ footer .wp-block-navigation-item__label {
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--accent-4);
   text-decoration: none;
-  transition: 0.5s ease all;
+  transition: 0.2s ease all;
   text-decoration: none;
 }
 .taxonomy-post_tag a:hover, .taxonomy-post_tag a:focus {
@@ -564,7 +564,7 @@ Author URI: https://alamilla.com
   gap: 1.2rem;
 }
 .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor svg {
-  transition: 0.5s ease all;
+  transition: 0.2s ease all;
   color: var(--wp--preset--color--contrast);
 }
 
@@ -612,6 +612,26 @@ Author URI: https://alamilla.com
 }
 .taxonomy-project-category a:hover, .taxonomy-project-category a:focus {
   text-decoration: underline;
+}
+
+/**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
+ */
+.wp-block-post .wp-block-post-featured-image a {
+  transition: 0.2s ease all;
+}
+.wp-block-post .wp-block-post-featured-image a:hover, .wp-block-post .wp-block-post-featured-image a:focus {
+  transform: var(--hover-translate--up);
 }
 
 /**

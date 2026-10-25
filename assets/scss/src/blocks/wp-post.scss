@@ -1,0 +1,12 @@
+@use '../mixins.scss';
+
+.wp-block-post {
+    .wp-block-post-featured-image a {
+        @include mixins.transition;
+
+        &:hover,
+        &:focus {
+            transform: var(--hover-translate--up);
+        }
+    }
+}

@@ -135,7 +135,46 @@
 .splide__arrows .splide__arrow {
     position: static;
     transform: unset;
-    border-radius: unset;
+    width: unset;
+    height: unset;
+
+    /* Badge mixin styles */
+    font-size: var(--wp--preset--font-size--x-small);
+    display: inline-block;
+    padding: 5px 14px;
+    line-height: 1.2;
+    border-radius: 9999px;
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--accent-4);
+    text-decoration: none;
+}
+
+.splide__arrows .splide__arrow:before {
+    display: block;
+    font-size: var(--wp--preset--font-size--small);
+    font-family: var(--font-family--primary);
+}
+
+.splide__arrows .splide__arrow svg {
+    display: none;
+}
+
+/* Prev */
+.splide__arrows .splide__arrow--prev {
+    left: unset;
+}
+
+.splide__arrows .splide__arrow--prev:before {
+    content: '←';
+}
+
+/* Next */
+.splide__arrows .splide__arrow--next {
+    right: unset;
+}
+
+.splide__arrows .splide__arrow--next:before {
+    content: '→';
 }
 
 /**
@@ -157,7 +196,6 @@
 /**
  * Mobile
  */
-
 
 @media (max-width: 1300px) {
 

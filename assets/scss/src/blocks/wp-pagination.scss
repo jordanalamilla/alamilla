@@ -1,0 +1,7 @@
+@use '../mixins.scss';
+
+.wp-block-query-pagination {
+    a {
+        @include mixins.badge;
+    }
+}

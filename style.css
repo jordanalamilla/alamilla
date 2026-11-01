@@ -635,6 +635,35 @@ Author URI: https://alamilla.com
 }
 
 /**
+ * Themes
+ * 
+ * Styles for themes that can be applied to the body element.
+ * These themes are triggered by the themeObserver.js script when certain elements are in view.
+ * Each theme corresponds to a theme color defined in the WordPress color palette.
+ *
+ * $themes map — All theme configurations in one place with their text and background colors
+ * @mixin theme-base() — A single reusable mixin that handles all the repetitive styles (navigation, footer, social icons)
+ * @each loop — Automatically generates all .theme-* classes from the map
+ * $button-themes list — Specifies which themes get button styling
+ * Another @each loop — Applies button styles only to the specified themes
+ */
+.wp-block-query-pagination a {
+  font-family: var(--heading-h5--font-family);
+  font-size: var(--heading-h5--font-size);
+  font-weight: var(--heading-h5--font-weight);
+  letter-spacing: var(--heading-h5--letter-spacing);
+  text-transform: var(--heading-h5--text-transform);
+  font-size: var(--wp--preset--font-size--x-small);
+  display: inline-block;
+  padding: 5px 14px;
+  line-height: 1.2;
+  border-radius: 9999px;
+  color: var(--wp--preset--color--contrast);
+  background-color: var(--wp--preset--color--accent-4);
+  text-decoration: none;
+}
+
+/**
  * Project Banner
  *
  * Styles for the custom Project Banner pattern.

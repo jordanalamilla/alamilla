@@ -44,10 +44,14 @@ $themes: (
 
     // Header and footer
     &,
+    footer {
+        background-color: var(#{$bg-var});
+    }
+
+    &,
     header,
     footer {
         color: var(#{$text-var});
-        background-color: var(#{$bg-var});
     }
 
     // Site logo SVG

@@ -97,10 +97,13 @@ body {
 }
 
 .theme-base,
+.theme-base footer {
+  background-color: var(--wp--preset--color--base);
+}
+.theme-base,
 .theme-base header,
 .theme-base footer {
   color: var(--wp--preset--color--contrast);
-  background-color: var(--wp--preset--color--base);
 }
 .theme-base .wp-block-site-logo svg {
   fill: var(--wp--preset--color--contrast);
@@ -116,10 +119,13 @@ body {
 }
 
 .theme-contrast,
+.theme-contrast footer {
+  background-color: var(--wp--preset--color--contrast);
+}
+.theme-contrast,
 .theme-contrast header,
 .theme-contrast footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--contrast);
 }
 .theme-contrast .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);
@@ -135,10 +141,13 @@ body {
 }
 
 .theme-accent-1,
+.theme-accent-1 footer {
+  background-color: var(--wp--preset--color--accent-1);
+}
+.theme-accent-1,
 .theme-accent-1 header,
 .theme-accent-1 footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--accent-1);
 }
 .theme-accent-1 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);
@@ -154,10 +163,13 @@ body {
 }
 
 .theme-accent-2,
+.theme-accent-2 footer {
+  background-color: var(--wp--preset--color--accent-2);
+}
+.theme-accent-2,
 .theme-accent-2 header,
 .theme-accent-2 footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--accent-2);
 }
 .theme-accent-2 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);
@@ -173,10 +185,13 @@ body {
 }
 
 .theme-accent-3,
+.theme-accent-3 footer {
+  background-color: var(--wp--preset--color--accent-3);
+}
+.theme-accent-3,
 .theme-accent-3 header,
 .theme-accent-3 footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--accent-3);
 }
 .theme-accent-3 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);
@@ -192,10 +207,13 @@ body {
 }
 
 .theme-accent-4,
+.theme-accent-4 footer {
+  background-color: var(--wp--preset--color--accent-4);
+}
+.theme-accent-4,
 .theme-accent-4 header,
 .theme-accent-4 footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--accent-4);
 }
 .theme-accent-4 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);
@@ -211,10 +229,13 @@ body {
 }
 
 .theme-accent-5,
+.theme-accent-5 footer {
+  background-color: var(--wp--preset--color--accent-5);
+}
+.theme-accent-5,
 .theme-accent-5 header,
 .theme-accent-5 footer {
   color: var(--wp--preset--color--accent-4);
-  background-color: var(--wp--preset--color--accent-5);
 }
 .theme-accent-5 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--accent-4);
@@ -230,10 +251,13 @@ body {
 }
 
 .theme-accent-6,
+.theme-accent-6 footer {
+  background-color: var(--wp--preset--color--accent-6);
+}
+.theme-accent-6,
 .theme-accent-6 header,
 .theme-accent-6 footer {
   color: var(--wp--preset--color--base);
-  background-color: var(--wp--preset--color--accent-6);
 }
 .theme-accent-6 .wp-block-site-logo svg {
   fill: var(--wp--preset--color--base);

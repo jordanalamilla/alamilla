@@ -18,6 +18,7 @@
 }
 
 @mixin badge {
+    @include transition;
     @include typography.heading-h5;
     font-size: var(--wp--preset--font-size--x-small);
     display: inline-block;
@@ -27,6 +28,11 @@
     color: var(--wp--preset--color--contrast);
     background-color: var(--wp--preset--color--accent-4);
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+        opacity: 0.7;
+    }
 }
 
 .badge {

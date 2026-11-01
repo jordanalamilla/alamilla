@@ -77,6 +77,7 @@ Author URI: https://alamilla.com
  * @package Alamilla
  */
 .badge {
+  transition: 0.2s ease all;
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -90,6 +91,9 @@ Author URI: https://alamilla.com
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--accent-4);
   text-decoration: none;
+}
+.badge:hover, .badge:focus {
+  opacity: 0.7;
 }
 
 body {
@@ -387,6 +391,7 @@ body.single-project header .wp-block-site-logo {
     right: var(--wp--preset--spacing--50);
   }
   header .wp-block-navigation-item__label {
+    transition: 0.2s ease all;
     font-family: var(--heading-h5--font-family);
     font-size: var(--heading-h5--font-size);
     font-weight: var(--heading-h5--font-weight);
@@ -400,6 +405,9 @@ body.single-project header .wp-block-site-logo {
     color: var(--wp--preset--color--contrast);
     background-color: var(--wp--preset--color--accent-4);
     text-decoration: none;
+  }
+  header .wp-block-navigation-item__label:hover, header .wp-block-navigation-item__label:focus {
+    opacity: 0.7;
   }
 }
 /**
@@ -474,6 +482,7 @@ footer .wp-block-navigation__container {
   justify-content: center;
 }
 footer .wp-block-navigation-item__label {
+  transition: 0.2s ease all;
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -487,6 +496,9 @@ footer .wp-block-navigation-item__label {
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--accent-4);
   text-decoration: none;
+}
+footer .wp-block-navigation-item__label:hover, footer .wp-block-navigation-item__label:focus {
+  opacity: 0.7;
 }
 @media (max-width: 781px) {
   footer {
@@ -529,6 +541,7 @@ footer .wp-block-navigation-item__label {
 }
 .taxonomy-post_tag a,
 .taxonomy-project-tag a {
+  transition: 0.2s ease all;
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -543,7 +556,6 @@ footer .wp-block-navigation-item__label {
   background-color: var(--wp--preset--color--accent-4);
   text-decoration: none;
   transition: 0.2s ease all;
-  text-decoration: none;
 }
 .taxonomy-post_tag a:hover, .taxonomy-post_tag a:focus,
 .taxonomy-project-tag a:hover,
@@ -685,6 +697,7 @@ Author URI: https://alamilla.com
  * Another @each loop — Applies button styles only to the specified themes
  */
 .wp-block-query-pagination a {
+  transition: 0.2s ease all;
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -698,6 +711,9 @@ Author URI: https://alamilla.com
   color: var(--wp--preset--color--contrast);
   background-color: var(--wp--preset--color--accent-4);
   text-decoration: none;
+}
+.wp-block-query-pagination a:hover, .wp-block-query-pagination a:focus {
+  opacity: 0.7;
 }
 
 /**

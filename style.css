@@ -497,12 +497,14 @@ footer .wp-block-navigation-item__label {
  * 
  * Override styles for the Gutenberg tags block.
  */
-.taxonomy-post_tag {
+.taxonomy-post_tag,
+.taxonomy-project-tag {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 2px;
+  gap: 10px 5px;
 }
-.taxonomy-post_tag a {
+.taxonomy-post_tag a,
+.taxonomy-project-tag a {
   font-family: var(--heading-h5--font-family);
   font-size: var(--heading-h5--font-size);
   font-weight: var(--heading-h5--font-weight);
@@ -519,10 +521,22 @@ footer .wp-block-navigation-item__label {
   transition: 0.2s ease all;
   text-decoration: none;
 }
-.taxonomy-post_tag a:hover, .taxonomy-post_tag a:focus {
+.taxonomy-post_tag a:hover, .taxonomy-post_tag a:focus,
+.taxonomy-project-tag a:hover,
+.taxonomy-project-tag a:focus {
   opacity: 0.7;
 }
+.taxonomy-post_tag .wp-block-post-terms__separator,
+.taxonomy-project-tag .wp-block-post-terms__separator {
+  display: none;
+}
 
+@media (min-width: 782px) {
+  .taxonomy-post_tag,
+  .taxonomy-project-tag {
+    justify-content: flex-end;
+  }
+}
 /*
 Theme Name: Alamilla
 Description: The portfolio website for Jordan Michael Alamilla.
@@ -586,7 +600,6 @@ Author URI: https://alamilla.com
   letter-spacing: var(--heading-h5--letter-spacing);
   text-transform: var(--heading-h5--text-transform);
   margin-top: unset;
-  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   text-decoration: none;

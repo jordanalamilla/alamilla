@@ -6,10 +6,11 @@
 
 @use "../mixins";
 
-.taxonomy-post_tag {
+.taxonomy-post_tag,
+.taxonomy-project-tag {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 2px;
+    gap: 10px 5px;
 
     a {
         @include mixins.badge;
@@ -20,5 +21,17 @@
         &:focus {
             opacity: 0.7;
         }
+    }
+
+    .wp-block-post-terms__separator {
+        display: none;
+    }
+}
+
+@media (min-width: 782px) {
+
+    .taxonomy-post_tag,
+    .taxonomy-project-tag {
+        justify-content: flex-end;
     }
 }

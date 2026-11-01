@@ -74,7 +74,8 @@
         "excerpt"
     ],
     "taxonomies": [
-        "post_tag"
+        "project-category",
+        "project-tag"
     ],
     "has_archive": true,
     "has_archive_slug": "projects",
@@ -90,5 +91,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1786668947
+    "modified": 1793451664
 }

@@ -1,0 +1,9 @@
+@use '../mixins.scss';
+
+.wp-block-post-navigation-link {
+    @include mixins.badge;
+
+    a {
+        text-decoration: none;
+    }
+}
